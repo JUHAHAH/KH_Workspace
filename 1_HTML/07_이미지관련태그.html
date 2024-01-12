@@ -1,0 +1,44 @@
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>07 이미지 관련 테이블</title>
+    </head>
+
+    <body>
+        <h1>img 태그</h1>
+        <pre>
+        웹문서에 사진 그림과 같은 이미지 삽입 가능하다
+
+        [속성]
+        1) source 위치 파일이나 웹주소
+        2) width/height 지정 가능
+        3) alt 이미지 속성 설명: 이미지가 출력되지 않는 경우 화면에 출력하는 이름
+        <hr>
+        <!--
+            상대 경로: 현재 디렉토리 기준: ./ ../ 이런거 
+            절대 경로: 전체 디렉토리 기준: C:\workspace\1_HTML
+        -->
+        <img src="./Asset/cats/cat1.jpg" alt="TEST CAT" width="500px">
+        <img src="https://images.unsplash.com/photo-1529472119196-cb724127a98e?q=80&w=972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="TEST DOG" width="500px" height="500px">
+        </pre>
+
+        <hr>
+        <h2>width, height 값은 고정 단위와 가변 단위로 정의</h2>
+        <h4>원본 사이즈 비율</h4>
+        <img src="./Asset/dogs/dog1.jpg" alt="" width="50%">
+
+        <h4>고정 단위 (px): 외부 변화 상관 없이 동일 크기 유지</h4>
+        <img src="./Asset/dogs/dog1.jpg" alt="" width="300px" height="300px">
+        <img src="./Asset/dogs/dog1.jpg" alt="" width="200px" height="300px">
+
+        <h4>가변 단위 (%): 화면이나 영역 기준, 화면에 크기에 맞춰 자동 조절 가능</h4>
+        <img src="./Asset/dogs/dog1.jpg" alt="" width="30%" height="30%">
+        <img src="./Asset/dogs/dog1.jpg" alt="" width="20%" height="30%">
+
+        <hr>
+
+        <h2>alt 속성 확인</h2>
+        <img src="./haha" alt="TEST ALT" height="200px">
+    </body>
+</html>
