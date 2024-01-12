@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>09 입력 관련 태그</title>
+    </head>
+
+    <body>
+        <h1>input 태그, form 태그</h1>
+
+        <h2>input 태그</h2>
+        <p>웹문서에서 사용자가 입력하는 창 제공하는 태그</p>
+
+        <h3>텍스트 관련 input 태그</h3>
+
+        <h4>type="test"</h4>
+        <pre>
+            > 한줄짜리 문자열을 입력할 수 있는 입력 상자
+            > input 타입의 태그의 기본 => 생략 가능
+            > 인라인(inline) 형식
+        </pre>
+        <input type="text">
+
+        <pre>
+            <h3>text관련 input 태그의 공용 속성</h3>
+            > size: 입력 상자의 크기가
+            > maxlength: 입력받는 텍스트의 최대 길이
+            > placeholder: 입력 상자에 작성될 내용을 흐리게 미리보기
+        </pre>
+
+        아이디: <input type="text" placeholder="아이디 입력" size="15" maxlength="5">
+
+        <hr>
+
+        <h4>type="password" 속성</h4>
+        <p>비밀번호 입력 상자: 입력되는 텍스트를 공개하지 않음</p>
+        비밀번호: <input type="password" placeholder="비밀번호 입력">
+        
+        <hr>
+        
+        <!--
+        type에 따라 입력 가능한 서식 지정 가능
+        ex) url, email, tel등
+        value의 경우 입력될 서식을 미리 채우는 것이 가능
+        -->
+        <h4>type 에 따라 유효성 검사 가능</h4>
+
+        <p>type="url" 일 경우 url만 가능하도록 함</p>
+        url: <input type="url" value="https://">
+
+        <p>type="tel"은 전화 번호 입력 가능하도록 함</p>
+        tel: <input type="tel" placeholder="000-0000-0000 혹은 00000000000">
+
+        <p>type="email"일 경우 email만 가능하도록 함</p>
+        email: <input type="email" placeholder="@mail.com">
+        <hr>
+        <h3>숫자 관련 input 태그</h3>
+        <pre>
+            <h3>숫자 관련 태그 공용 속성</h3>
+            > min: 최소값
+            > max: 최대값
+            > step: 증가/감소 단계 지정((ex)step별 증감값/감소값 지정 가능)
+        </pre>
+        <h4>type="number"</h4>
+        <p>숫자만 입력 가능한 서식</p>
+        <!--브라우저 지원에 따라 클릭로 증감 가능한 spin box 표현 가능-->
+        점수 입력: <input type="number" placeholder="Only Number"><br>
+        Step 10: <input type="number" step="10" placeholder="Step 10" min="0" max="100">
+
+        <hr>
+        <h4>type="range"</h4>
+        <p>슬라이드를 이용해서 숫자 지정 가능 <br>
+            보통 자바스크립트와 함께 사용
+        </p>
+        슬라이드: <input type="range" min="0" max="50" step="10" id="slide">
+
+        <hr><hr><hr>
+
+        <h3>날짜와 시간 관련된 input 태그</h3>
+        <h4>type="date"</h4>
+        <input type="date">
+        <h4>type="month"</h4>
+        <input type="month">
+        <h4>type="week"</h4>
+        <input type="week">
+        <h4>type="time"</h4>
+        <input type="time">
+        <h4>type="datetime-local"</h4>
+        <input type="datetime-local">
+        <h4>type="datetime" 자동완성에는 존재하지만 이제 지원 안함</h4>
+        <input type="datetime">
+
+        <hr><hr><hr>
+
+        <h3>radio와 체크 박스</h3>
+        <p>여러 관련된 값을 묶어서 사용하는 경우</p>
+        <strong style="color: red;">
+            묶음으로 다루려는 input은 반드시 같은 name 속성 필요(그룹화)
+        </strong>
+        <pre>
+            > Radio는 여러 선택지 중 하나(자동 변경)
+            > Checkbox는 여러가지 중복으로 선택 가능
+        </pre>
+        <h3>name 속성</h3>
+        <pre>
+            1> input과 관련된 태그들을 묶어서 부를 때 사용
+            2> 서버에 제출되는 input(value)값을 지정해줌
+        </pre>
+        Radio: 
+        <!--굳이 Label 태그 사용 이유: Label 태그 사용시 input 박스와 연결해서 사용 가능
+        ex) 글자 클릭시 체크 가능
+        id는 식별자를 의미 한다(변수값 저장) 따라서 하나의 문서 안에서 동일한 id값 사용 불가
+        -->
+        <label for="A">A</label><input type="radio" name="team" id="A">
+        <label for="B">B</label><input type="radio" name="team" id="B">
+        <label for="C">C</label><input type="radio" name="team" id="C"><br>
+
+        취미 선택: 
+        <input type="checkbox" name="hobby" id="base"><label for="base">야구</label>
+        <input type="checkbox" name="hobby" id="foot"><label for="foot">축구</label>
+        <input type="checkbox" name="hobby" id="basket"><label for="basket">농구</label><br><br>
+
+        <!--
+        아래와 같이 배열시 for 지정 필요없음
+        -->
+        label 테스트:
+        <label>앞<input type="checkbox">뒤</label>
+
+        <hr><hr><hr>
+
+        <h3>기타 input 태그</h3>
+        type="color": <input type="color"><br>
+        type="file": <input type="file"><br>
+        type="hidden": <input value="있었는데 없었어요" type="hidden"> (input에 입력된 value의 값을 숨기는 것이 가능 브라우저상에서 숨김 테이터 정상 처리 가능) <br>
+
+        <hr><hr><hr>
+
+        <h2>FORM 태그</h2>
+        <pre>
+            > 앞서 했던 div와 같은 형식(블록)
+            > 내부에 입력된 정보를 서버에 전달하는 역할
+
+            [속성]
+            1> action: 내부에 작성된 값을 전달 할 서버/ 페이지 주소를 작성
+            2> name: form 태그에 이름을 지정하여 구분 가능(JAVA로 확인 가능)
+            3> method: 서버로 데이터 전달 방식 지정
+            4> target: action에 지정된 주소를 현재 탭 혹은 새탭 중 어디서 열것인지 지정
+        </pre>
+
+        <h3>Form 예시 1</h3>
+        <!--
+            form 태그의 기본값ㅡㅇㄴ get으로 따라서 주소창에 값이 노출됨
+
+        -->
+        <form>
+            아이디: <input type="text" placeholder="아이디" name="id" value="user01"><br>
+            비밀번호: <input type="password" placeholder="비밀번호" name="pw" value="1234">
+            <button>제출</button>
+        </form>
+        <!--
+        .html?id=user01&pw=1234'
+        위와 같이 표현됨
+        form 태그 유의 사항: 주소의 ?(제출 값 시작) 이후 name 값과 name에 배정된 value값이 & 로 나누어서 표현되어있음
+        ""=""&""="" : name=value&name=value
+        위의 주소 해석: name 은 순서대로 각각 id와 pwd, value는 user01과 1234
+        -->
+        <h3>Form 예시 2</h3>
+        <form action="07_이미지관련태그.html" target="_blank" method="get">
+            취미 선택: 
+            <input type="checkbox" name="hobby" id="base"><label for="base">야구</label>
+            <input type="checkbox" name="hobby" id="foot"><label for="foot">축구</label>
+            <input type="checkbox" name="hobby" id="basket"><label for="basket">농구</label><br>
+            <button type="">제출</button>
+        </form>
+
+    </body>
+</html>
