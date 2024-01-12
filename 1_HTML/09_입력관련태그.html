@@ -151,7 +151,7 @@
 
         <h3>Form 예시 1</h3>
         <!--
-            form 태그의 기본값ㅡㅇㄴ get으로 따라서 주소창에 값이 노출됨
+            form 태그의 기본값은 get으로 따라서 주소창에 값이 노출됨
 
         -->
         <form>
@@ -172,8 +172,91 @@
             <input type="checkbox" name="hobby" id="base"><label for="base">야구</label>
             <input type="checkbox" name="hobby" id="foot"><label for="foot">축구</label>
             <input type="checkbox" name="hobby" id="basket"><label for="basket">농구</label><br>
-            <button type="">제출</button>
+            <!--
+                type="submit"이 기본 값(서버에 값을 보냄) 
+                type="button"이면 아무일도 안일어남(그냥 버튼) -> 하지만 자바스크립트를 이용해서 원하는 기능 넣는 것이 가능
+                type="reset"이면 폼(input) 태그 안의 값을 초기화
+            -->
+            <button>제출</button> 
         </form>
+        <br>
+        <form>
+            <input type="text" name="" id="">
+            <button type="reset">초기화</button>
+        </form>
+        <br>
+        <form>
+            <button type="button" id="btn">그냥 버튼</button>
+            <!--
+                script 태그를 이용하여 Javscript 작성 가능
+            -->
+            <script>
+                //주석 다는 법
+                document.getElementById("btn").addEventListener("click",function() {
+                    //click 했을 때 실행되는 funtion()
+                    alert("그냥 버튼입니다");
+                })
+            </script>
+        </form>
+        <hr>
+        <h3>fieldset / legend</h3>
+        <pre>
+            fieldset: 테두리를 만들어 그룹을 구분하는 영역
+            legend: fieldset 테두리에 이름을 붙이는 것
+        </pre>
+        <form>
+            <fieldset>
+                <legend>로그인 폼</legend>
+                아이디: <input><br>
+                비밀번호: <input type="password" name="" id="">
 
+                <button>가입하기</button>
+            </fieldset>
+        </form>
+        <hr><hr><hr>
+
+        <h3>textarea / select / option</h3>
+        <h4>textarea: 여러 줄을 입력하기 위한 입력상자</h4>
+        <!--
+            style 옵션에서 resize 설정 가능
+        -->
+        <textarea name="" id="" cols="50" rows="10" style="resize: none;" placeholder="여기에 쓰세요(최대 1000자)"></textarea>
+        <hr>
+
+        <h3>select 태그, option 태그</h3>
+        <pre>
+            리스트에서 옵션을 선택할 수 있게 해줌
+        </pre>
+        <form action="">
+            <select name="test" id="">
+                <option value="1">선택1</option>
+                <option value="2">선택2</option>
+                <!--
+                    기본으로 선택한 값은 select를 통해 설정 가능
+                -->
+                <option value="3" selected>기본 선택</option>
+                <option value="4">선택4</option>
+            </select>
+            <!--
+                select 제출시에 서버로 전달되는 값은 option의 value를 통해 설정 가능
+                option의 value가 정의되지 않았을 경우 option의 이름 ex)선택1 이 전달됨
+            -->
+            <button>제출</button>
+        </form>
+        <!--
+            checked 속성은 radio와 checkbox에 적용 가능하며 selected와 동일하게 작용
+        -->
+        <input type="radio" name="" id="" checked>
+        <input type="checkbox" name="" id="" checked>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
