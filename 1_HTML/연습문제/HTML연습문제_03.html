@@ -14,21 +14,24 @@
                 <legend>필수 입력 사항</legend>
                 <table>
                     <tr>
+                        <!--<b><center> 대신 th (Table Header) 사용하면 볼드+중앙 정렬 가능-->
                         <td><center><b>ID</b></center></td>
-                        <td><input type="text" placeholder="아이디 10글자 이내"> <button>중복 확인</button></td>
+                        <td><input name="id" type="text" placeholder="아이디 10글자 이내"> <button type="button">중복 확인</button></td>
                     </tr>
                     <tr>
+                        <!--깾를 3개로 나누는 Table만들고 합치는 경우, <td colspan="2">를 사용하면 Column 병합 가능-->
                         <td><center><b>비밀번호</b></center></td>
-                        <td><input type="password" name="" id="" placeholder="영문, 숫자, 특수문자 포함 8자 이상" size="30"></td>
+                        <td><input name="pwd" type="password" name="" id="" placeholder="영문, 숫자, 특수문자 포함 8자 이상" size="30"></td>
                     </tr>
                     <tr>
                         <td><center><b>비밀번호 확인</b></center></td>
-                        <td><input type="password" size="30"></td>
+                        <td><input name="pwd_check" type="password" size="30"></td>
                     </tr>
                     <tr>
                         <td><center><b>Email</b></center></td>
-                        <td><input type="text"> <select name="" id="">
-                            <option value="">직접 입력</option>
+                        <td><input type="text"> <select name="email" id="">
+                            <!--Selected 사용하여 Default값 설정-->
+                            <option value="" selected>직접 입력</option>
                             <option value="">@naver.com</option>
                             <option value="">@gmail.com</option>
                             <option value="">@daum.net</option>
@@ -38,24 +41,24 @@
             </fieldset>
             <fieldset>
                 <legend>추가 정보</legend>
-                프로필 사진 <input type="file" name="" id=""> <p style="font-size: 8;">선택된 파일 없음</p>
+                프로필 사진 <input type="file" name="photo" id=""> <p style="font-size: 8;">선택된 파일 없음</p>
                 <br>
-                성별: <label for=""><input type="radio">남자</label> <label for=""><input type="radio">여자</label>
+                성별: <label for=""><input name="sex" type="radio" value="male">남자</label> <label for=""><input name="sex" type="radio" value="female">여자</label>
                 <br><br>
-                생년월일: <input type="date">
+                생년월일: <input name="birth" type="date">
                 <br><br>
-                <label for=""><input type="checkbox"> 야구</label>
-                <label for=""><input type="checkbox"> 농구</label>
-                <label for=""><input type="checkbox"> 축구</label>
+                <label for=""><input name="hobby" type="checkbox" value="base"> 야구</label>
+                <label for=""><input name="hobby" type="checkbox" value="basket"> 농구</label>
+                <label for=""><input name="hobby" type="checkbox" value="foot"> 축구</label>
                 <br>
-                <label for=""><input type="checkbox"> 공부</label>
-                <label for=""><input type="checkbox"> 음악감상</label>
+                <label for=""><input name="hobby" type="checkbox" value="study"> 공부</label>
+                <label for=""><input name="hobby" type="checkbox" value="music"> 음악감상</label>
                 <br>
-                <label for=""><input type="checkbox"> 기타 </label><input type="text" name="" id="">
+                <label for=""><input name="hobby" type="checkbox" value="etc"> 기타 </label><input type="text" name="" id="">
                 <br><br>
                 자기소개
                 <br>
-                <textarea name="" id="" cols="30" rows="10" style="resize: none;"></textarea>
+                <textarea name="intro" id="" cols="30" rows="10" style="resize: none;"></textarea>
             </fieldset>
             <br>
             <button>회원가입</button>
