@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>01_CSS개요,CSS선택자1</title>
+        <style>
+            /*CSS용 주석 다는 법*/
+            /*style 태그 내에선 CSS 코드만 작성 가능 > CSS 전용 공간*/
+            div {
+                background-color: whitesmoke;
+                border: 3px solid red; /*3px 두께의 빨간 실선*/
+            }
+            strong {
+                background-color: yellow;
+                border: 3px dashed blue;
+            }
+            span {
+                background-color: pink;
+            }
+            /*ID Test*/
+            #li-1 {
+                background-color: red;
+                color: white;
+            }
+            #li-2 {
+                background-color: orange;
+                color: whitesmoke;
+            }
+            #li-3 {
+                background-color: yellow;
+            }
+            #li-4 {
+                background-color: green;
+                color: whitesmoke;
+            }
+            #li-5 {
+                background-color: blue;
+                color: white;
+            }
+            /**Class Test*/
+            .test1 {
+                background-color: aquamarine;
+                color: indigo;
+            }
+            .test2 {
+                background-color: blanchedalmond;
+                color: purple;
+            }
+            .test3 {
+                background-color: black;
+                color: aliceblue;
+            }
+            .font1 {
+                font-weight: bold;
+            }
+            /*Whole(*) Test*/
+            /*font-family는 글꼴 모양, font-size는 글꼴 크기*/
+            * {
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS(Cascading Style Sheet)</h1>
+        <pre>
+            마크업 언어(.html)가 실제 화면에
+            표시되는 방법(모양/색상등의 스타일)을 기술하는 언어
+            (.html이 어떤식으로 보여지는 지 지정)
+        </pre>
+        <hr>
+        <h1>CSS Selector</h1>
+        <pre>
+            Selector란 현재 HTML 문서 내에서 특정한 요소를 선택하는 문자/문자열
+            스타일을 적용하고자 하는 요소이자 방법
+        </pre>
+        <hr>
+        <h3>태그 선택자</h3>
+        <pre>
+            목표 HTML과 같은 태그를 지정하는 선택자
+
+            ex) 태그 {
+                적용 스타일;
+            }
+        </pre>
+        <div>
+            <strong>Div Strong 태그입니다</strong>
+            <br>
+            <span>Span 태그입니다</span>
+            <br>
+            <ul>
+                <li>
+                    <strong>Ul Li Strong 태그입니다</strong>
+                </li>
+                <li>
+                    <span>Ul Li Span 태그입니다</span>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <h3>ID 선택자</h3>
+        <pre>
+            HTML 문서내에서 id값이 일치하는 요소를 선택
+            <!--#은 아이디의 값을 나타냄-->
+            #id값 {
+                적용 스타일;
+            }
+        </pre>
+        <ol>
+            <li id="li-1">
+                Ol Li 1 태그입니다
+            </li>
+            <li id="li-2">
+                Ol Li 2 태그입니다
+            </li>
+            <li id="li-3">
+                Ol Li 3 태그입니다
+            </li>
+            <li id="li-4">
+                Ol Li 4 태그입니다
+            </li>
+            <li id="li-5">
+                Ol Li 5 태그입니다
+            </li>
+        </ol>
+        <!--
+            프로그래밍별 컨벤션(룰)
+            Java: helloWorld (Camel 표기)
+            DB: HELLO_WORLD (대문자_표기)
+            HTML: hello-world (하이픈-표기) or hello_world (언더바_표기)
+        -->
+        <hr>
+        <h3>Class 선택자</h3>
+        <pre>
+            html내의 같은 class 속성을 지니는 모든 요소를 선택(그룹화)
+            <!--"."이 class를 나타냄-->
+            .class 속성값 {
+                적용 스타일;
+            }
+        </pre>
+        <ul>
+            <li class="test1 font1">
+                Class 선택자 1 테스트
+            </li>
+            <li class="test2">
+                Class 선택자 2 테스트
+            </li>
+            <li class="test3">
+                Class 선택자 3 테스트
+            </li>
+            <li class="test2 font1">
+                Class 선택자 2 테스트
+            </li>
+            <li class="test1">
+                Class 선택자 1 테스트
+            </li>
+        </ul>
+        <!--
+            주의사항! id는 고윳값으로 식별자의 역할이므로 
+            여러 그룹에 적용할 경우 무조건 Class 사용
+            여러 그룹을 교차 사용시 "옵션1 옵션2 옵션3.." 띄어쓰기로 구분
+        -->
+        <hr>
+        <h3>모든 요소 선택자 (*)</h3>
+        <pre>
+            말 그대로 모든 요소를 선택하는 선택자
+            
+            * {
+                적용 스타일;
+            }
+        </pre>
+
+    </body>
+</html>

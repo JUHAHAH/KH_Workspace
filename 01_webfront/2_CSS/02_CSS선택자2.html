@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>02_CSS선택자2</title>
+        <!--
+            연결하고자 하는 css 파일은 link 태그 사용
+            rel 옵션은 stylesheet 사용(style과 관련된 파일(.css)이므로)
+        -->
+        <link rel="stylesheet" href="./css/selector2.css">
+    </head>
+    <body>
+       <h1>기본 속성 선택자</h1>
+       <pre>
+        태그에 작성된 특정 속성을 선택하는 선택자
+
+        선택자[속성명="속성값"] {
+            CSS 코드;
+        }
+
+        Selector[Decalration="Value"] {
+            Property
+        }
+
+        >참고사항:
+        1> 선택자는 생략 가능
+        2> "속성값"의 ""는 ''로 대체 불가
+       </pre>
+       <div name="name-1">div1 name1</div>
+       <div name="name-1">div2 name1</div>
+       <div name="name-2">div3 name2</div>
+       <div name="name-2">div4 name2</div>
+
+       <p name="name-1">p1 name1</p>
+       <p name="name-1">p2 name1</p>
+       <p name="name-2">p3 name2</p>
+       <p name="name-2">p4 name2</p>
+       <hr>
+       <h3>자식 선택자</h3>
+       <pre>
+        지정된 요소 바로 하위에 존재하는 요소를 선택하는 선택자
+        
+        선택자1 > 선택자2 {
+            CSS 코드;
+        }
+
+        >선택자1: 부모 요소 (반드시 정의 되어야 함)
+        >선택자2: 자식 요소 (마찬가지)
+    </pre>
+    <ul id="parent-ul">부모(Parent) 요소
+        <li>자식(Child) 요소1</li>
+        <li><span>Span 자식 요소2</span></li>
+        <li>자식(Child) 요소3</li>
+        <li><span>Span 자식 요소4</span></li>
+    </ul>
+    <hr>
+    <h3>후손/자손 선택자</h3>
+    <pre>
+    지정된 요소의 모든 하위에 존재하는 요소를 선택하는 선택자
+
+    조상(부모)1 후손2 {
+        CSS 코드;
+    }
+
+    후손 요소는 조상(부모) 요소의 하위에 있는 목표 브랜치에 포함되어있는 요소
+    </pre>
+    <div id="test-div">
+        <p>test-div의 자식 요소 1</p>
+        <p>test-div의 자식 요소 2</p>
+        <div>
+            <p>test-div의 손자 요소(나도 후손일까?)</p>
+        </div>
+    </div>
+    </body>
+    <hr>
+    <h3>반응 선택자</h3>
+    <pre>
+    사용자의 움직임에 따라 스타일이 변화하는 선택자
+    (마우스 오버, 클릭 유지, 클릭, 마우스 위치..등)
+
+    >요소를 클릭하는 경우를 선택(:active)
+    >요소에 마우스가 올라가는 경우(:hover)
+    </pre>
+    <div class="div-clss" id="active-test">Active Test <br> :active</div>
+    <div class="div-clss" id="hover-test">Hover Test <br> :hover</div>
+    <hr>
+    <h3>상태 선택자</h3>
+    <pre>
+        입력 양식(input, input 관련 태그)의 선택에 따라 달라지는 선택자
+
+        :focus > 요소에 초점이 맞춰졌을 때
+        :checked > 요소가 체크 되었을 때 (ex)라디오나 체크박스
+        :enabled / :disabled > 요소가 사용 가능하거나 불가능할 때
+    </pre>
+    <h4>:focus</h4>
+    <!--요소가 활성화 되거나 기입 창이 띄워졌을 때-->
+    <input type="text" id="focus-test">
+    <h4>:checked</h4>
+    <label>사과<input type="checkbox" name="fruits"></label>
+    <br>
+    <label>바나나<input type="checkbox" name="fruits"></label>
+    <br>
+    <label>멜론<input type="checkbox" name="fruits"></label>
+    <br>
+    <h4>:enabled / :disabled</h4>
+    <div id="test-div2">
+        사용 가능: <input type="text" enabled> <!--사용 가능 창-->
+        <br>
+        사용 불가능: <input type="text" disabled> <!--사용 불가 창-->
+    </div>
+    <hr>
+    <h3>동위 선택자</h3>
+    <pre>
+    동위 관계(동등한 위치 == 현제 관계)
+    동위 관계에서 뒤에 위치한 요소를 선택하는 선택자1
+    
+    요소들이 다음과 같을 때
+    A
+    B
+    B
+    B
+
+    1> A선택자 + B선택자 {
+        CSS 코드;
+    }
+    
+    >이때 + 는 A 바로 다음의 B 하나만을 선택
+
+    2> A선택자 ~ B선택자 {
+        CSS 코드;
+    }
+
+    >이때 ~ 는 A 뒤에 있는 모든 B 요소를 선택(~: Tealed)
+    </pre>
+    <div id="div1">1번 입니다.</div>
+    <div>2번 입니다.</div>
+    <div id="div3">3번 입니다.</div>
+    <div id="div4">4번 입니다.</div>
+    <p>관련 없는 태그입니다!</p>
+    <div id="div5">5번 입니다</div>
+    
+</html>
+    
