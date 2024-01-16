@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+table {
+    width: 500px;
+    height: 500px;
+    border: 1px black solid;
+}
+td {
+    width: 100px;
+    height: 100px;
+}
+tr {
+    width: 100px;
+    height: 100px;
+}
+.red {
+    background-color: red;
+}
