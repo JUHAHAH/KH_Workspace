@@ -52,6 +52,9 @@ p[name="name-1"] {
     height: 230px;
 }
 
+p {
+    list-style-type: square;
+}
 /*변화(Transition) 에 적용할 수 있는 효과*/
 #hover-test {
     transition-duration: 0.5s;
@@ -82,4 +85,16 @@ input[name="fruits"]:checked {
 }
 #div3 ~ div {
     background-color: yellowgreen;
+}
+
+.cinzel-decorative-bold {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
 }
