@@ -1,0 +1,76 @@
+/* 일반구조 선택자 */
+
+/* :first-child: 형제 관계 요소중 첫번째 요소 */
+/* 단 명령 우선순위! 만약 첫번째 p 태그가 첫번째 일경우= */
+#test1 > p:first-child {
+    background-color: blanchedalmond;
+}
+
+/* :last-child: 형제 관계 요소중 마지막 요소 */
+#test1 > pre:last-child {
+    background-color: coral;
+}
+#test1 > p:last-child {
+    /* p는 마지막 자식이라는 조건에 부합하지 않음! 따라서 적용 안됨 */
+    background-color: red;
+}
+
+/* :nth-child: 형제 관계 요소중 n번째 요소 */
+#test1 > p:nth-child(4) {
+    /* test안의 요소를 우선 검색 nth 가 n번째 가 맞는가? -> 맞으면 적용 */
+    background-color: aquamarine;
+}
+
+/* 홀수번째 요소 선택하기 */
+#test1 > p:nth-child(2n-1) {
+    font-weight: bold;
+}
+/* 짝수번째도 마찬가지 */
+/* CSS에서 n 함수 사용하여 숫자 변동 가능 */
+#test1 > p:nth-child(2n) {
+    color: blue;
+}
+
+/* :nth-last-child: 형제 관계 요소중 뒤에서 n번째 요소 */
+#test1 > p:nth-last-child(2) {
+    background-color: violet;
+}
+
+/********************************************/
+
+/* 형태 구조 선택자 */
+/* child와 다르게 true 체크를 하지 않고 조건에 만족하는 요소안에서 선택 */
+/* :first-of-type : 공통 요소의 자식중에 첫번째 요소*/
+#test2 > p:first-of-type {
+    background-color: cadetblue;
+}
+
+/* :last-of-type : 공통 요소의 자식중에 마지막 요소*/
+#test2 > p:last-of-type {
+    background-color: darksalmon;
+}
+
+/* :nth-of-type : 공통 요소의 자식중에 n번째 요소*/
+/* p태그 중에서 홀수번째라고 하면 다음과 같다 */
+#test2 > p:nth-of-type(2n-1) {
+    font-size: 30px;
+}
+/* 홀수 지정시 다음과 같음 */
+#test2 > p:nth-of-type(2n) {
+    color: red;
+}
+
+/*******************************************/
+
+/* 부정 선택자 */
+/* :not()안의 요소를 제외하고 선택 */
+/* li 요소중 3n의 요소만 제외하고 선택 */
+#test3 > li:not(:nth-of-type(3n)) {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/*******************************************/
+
+
+
+

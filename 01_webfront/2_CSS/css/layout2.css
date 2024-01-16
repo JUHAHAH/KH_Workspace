@@ -1,0 +1,93 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;   
+}
+
+.border {
+    /* border의 크기는 content의 외부에서 계산됨: border의 길이 content + (2 * border) */
+    /* 윤곽선 */
+    border: 10px black solid;
+}
+.padding {
+    /* Padding도 Content 사이의 여백을 지정 = 공간(넓이만을 지정) */
+    padding: 30px;
+}
+.margin {
+    /* 마진은 말 그대로 마진이라 여백으로 적용(색상 없음, 영역만) */
+    margin: 50px;
+}
+#m1 {
+    /* 둘 이상의 마진 값이 충돌할 때 둘의 값이 더해지지 않고 곂쳐짐 */
+    /* 마진은 증감이 아니라 제일 큰 값 기준 */
+    margin: 100px;
+}
+.total {
+    border: 10px black solid;
+    padding: 30px;
+    margin: 50px;
+}
+
+/* padding 테스트 */
+.padding-test {
+    /* 작성법(옵션)에 따라 위치에 따른 넓이 변화 가능 */
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    padding-right: 10px;
+    /* 값을 두개 입력시 압의 값이 상+하(20) 뒤 값이 좌+우(30) */
+    padding: 20px 30px;
+    /* 순서대로 상(20) 좌+우(30) 하(40) */
+    padding: 20px 30px 40px;
+    /* 값 4개일 시 '시계방향': 순서대로 상(20) 우(30) 하(40) 좌(50) */
+    padding: 20px 30px 40px 50px;
+}
+
+/* border 테스트(속성이 조금 다름) */
+.border-test {
+    /* border 속성은 상하좌우 별개로 지정 불가 */
+    /* 대신 별도의 옵션이 존재함 */
+    border-top: 5px solid whitesmoke;
+    border-bottom: 10px solid gray;
+    border-left: 15px solid dimgrey;
+    border-right: 20px solid darkslategray;
+}
+
+/* margin 테스트 */
+.box-container {
+    border: 2px solid black;
+    width: 500px;
+    height: 300px;
+}
+.margin-auto {
+    /* margin 은 상하좌우 가능 */
+    margin-top: 100px; /* 작동 안함 왜? */
+    /* auto는 좌우 간격간에 자동으로 중앙으로 정렬 */
+    /* auto는 이전 옵션 값에 덮어씌워짐 */
+    margin: auto;
+    /* auto 적용이후에 적용하면 별도의 margin 설정 가능 */
+    margin-top: 100px;
+}
+
+/* box-sizing 테스트 */
+#box-sizing {
+    /* 테두리 10픽셀 패딩 20픽셀 내용 포함 전체 크기가 300픽셀인 정사각형 */
+    border: 10px black solid;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    /* border-box는 border를 포함해 합쳤을 때를 width/height로 계산 */
+    box-sizing: border-box;
+    /* content-box는 content만을 계산했을 때 width/height로 계산 */
+    /* 일반적인 경우, 
+    * {
+        box-sizing: border-box 
+     }
+     로 설정해주어 원하는 영역 사이즈(다른 요소 포함)를 응용할 수 있다
+     */
+    box-sizing: content-box;
+}
+
+
+
+

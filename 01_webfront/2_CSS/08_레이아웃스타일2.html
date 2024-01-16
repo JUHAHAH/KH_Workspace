@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_레이아웃스타일2</title>
+    <link rel="stylesheet" href="./css/layout2.css">
+</head>
+
+<body>
+    <h1>요소의 영역(여백) 관련 속성</h1>
+    <pre>
+        HTML 요소는 총 4가지의 영역으로 구성되어 있다.
+
+        1. content 영역
+        - 요소의 내용이 작성되는 영역
+        (시작태그와 종료태그 사이에 작성되는 내용을 생각하면 됨)
+
+        2. padding 영역
+        - content 영역과 border 영역 사이
+
+        3. border 영역
+        - 요소의 테두리가 지정되는 영역
+        - content보다 바깥쪽에서 content를 감싸고 있음
+
+        4. margin 영역
+        - 다른 요소와의 간격을 나타내는 영역
+    </pre>
+    <hr>
+    <div class="box">내용입니다</div>
+    <hr>
+    <h3>content 영역</h3>
+    <div class="box content">내용입니다</div>
+    <hr>
+    <h3>border 영역</h3>
+    <div class="box border">내용입니다</div>
+    <hr>
+    <h3>padding 영역</h3>
+    <div class="box padding">내용입니다</div>
+    <hr>
+    <h3>margin 영역</h3>
+    <div class="box margin">내용입니다</div>
+    <div class="box margin" id="m1">내용입니다</div>
+    <hr>
+    <h3>통합 적용</h3>
+    <div class="box total">내용입니다</div>
+    <hr>
+    <hr>
+    <h2>padding, border, margin의 방향성</h2>
+    <pre>
+        padding, border, margin은 방향에 따라 크기를 지정 가능
+
+        > ㅁㅁㅁ-top
+        > ㅁㅁㅁ-bottom
+        > ㅁㅁㅁ-left
+        > ㅁㅁㅁ-right
+
+        (ㅁㅁㅁ 은 각 영역값)
+    </pre>
+    <h3>padding 테스트</h3>
+    <div class="box padding-test">내용입니다</div>
+    <hr>
+    <h3>border 테스트</h3>
+    <div class="box border-test">내용입니다</div>
+    <hr>
+    <h3>margin: auto 테스트</h3>
+    <div class="box-container">
+        <div class="box margin-auto"></div>
+    </div>
+    <hr>
+    <hr>
+    <h2>box-sizing 속성</h2>
+    <pre>
+        요소의 영역 중 실제로 화면에 보여지는 부분인
+        content, padding, border (margin은 여백)
+        각각의 크기를 따로 지정하면 전체의 크기를 가늠하기 어렵다
+    </pre>
+    <div class="box" id="box-sizing">내용입니다</div>
+</body>
+
+</html>

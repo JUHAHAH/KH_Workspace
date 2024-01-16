@@ -1,0 +1,26 @@
+/* 5순위 태그 선택자 */
+div {
+    width: 200px;
+    height: 200px;
+    /* 1순위 속성값 !important */
+    background-color: red !important;
+}
+
+/* 4순위 동일한 우선순위에선 마지막 설정값이 적용 */
+.cls1 {
+    background-color: green;
+}
+.cls1 {
+    background-color: yellow;
+}
+
+/* 3순위 아이디 선택자 */
+#test1 {
+    color: wheat;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+}
+
+/* 2순위 inline-style 속성 */
+/* html 파일 내에서 작성되는 경우 (.css는 위치상 다른 명령보다 우선 적용된다) */

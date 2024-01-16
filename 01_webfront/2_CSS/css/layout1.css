@@ -1,0 +1,118 @@
+.area1 {
+    background-color: red;
+}
+.area2 {
+    background-color: orange;
+}
+.area3 {
+    background-color: yellow;
+}
+.area4 {
+    background-color: green;
+}
+.area5 {
+    background-color: blue;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+
+    width: 150px;
+    height: 150px;
+}
+
+.inline-block {
+    display: inline-block;
+    /* none의 경우 존재하고 있으나 보이지는 않음 */
+}
+
+/* 감싸는 영역 요소 */
+#container-1 {
+    border: 3px solid black;
+    width: 323px;
+    height: 472px;
+}
+
+/* 내부에 영역을 분할할 요소 */
+.div-1 {
+    height: 50%;
+    width: 100%;
+    
+    border: 1px dashed;
+    color: red;
+}
+
+#container-1 > .div-1:first-of-type {
+    height: 30%;
+    width: 100%;
+    
+    border: 3px solid black;
+    background-color: red;
+}
+
+#container-1 > .div-1:last-of-type {
+    height: 70%;
+    width: 100%;
+    
+    border: 3px solid black;
+    background-color: blue;
+}
+
+#container-2 {
+    width: 300px;
+    height: 500px;
+
+    border: 2px solid black;
+}
+
+/* 삼분할 연습 TEST.html 참고 */
+/* width 별도의 지정 없을 경우 width는 기본이 100% */
+#container-2 > .div-2:nth-child(1) {
+    height: 20%;
+    background-color: chartreuse;
+}
+#container-2 > .div-2:nth-child(2) {
+    height: 30%;
+    background-color: darkturquoise;
+}
+#container-2 > .div-2:nth-child(3) {
+    height: 50%;
+    background-color: violet;
+}
+
+/* 좌우분할 연습 */
+#container-3 {
+    border: 5px red solid;
+    width: 400px;
+    height: 200px;
+}
+
+.div-3 {
+    width: 50%;
+    /* 주의! height는 생략시 기본값이 0 */
+    height: 100%;
+    display: inline-block;
+}
+
+#container-3 > .div-3:first-child {
+    background-color: pink;
+}
+#container-3 > .div-3:last-child {
+    background-color: violet;
+}
+
+/* visibility: hidden 과 display: none 의 차이 */
+/* html에서 확인시 test4의 요소가 남아있는 것을 알 수 있지만 */
+#test4 {
+    background-color: tomato;
+    visibility: hidden;
+}
+/* display: none은 아예 인식이 안됨 */
+#test5 {
+    background-color: tomato;
+    display: none;
+}

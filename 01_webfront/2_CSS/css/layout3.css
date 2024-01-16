@@ -1,0 +1,85 @@
+div {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.container-1 {
+    border: 2px dashed red;
+    /* 기준이 되는 위치 옵션은 relative */
+    position: relative;
+}
+
+.first {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+}
+
+.second {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    /* absolute 적용 순간 position 기준이 container-1이 된다*/
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.third {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+/* 포지션을 중앙으로 두는 방법 */
+.container-2 {
+    width: 300px;
+    height: 300px;
+    /* 포지션을 relative로 설정(기준) */
+    position: relative;
+}
+
+#center {
+    background-color: pink;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /* 모든 영역을 0으로 설정하고 마진을 자동으로 설정 */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+
+/* 해당 기능을 참고하여 위치 상관없이 존재하는 버튼 사용 가능 */
+.fixed-area {
+    width: 120px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
