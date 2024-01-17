@@ -1,0 +1,33 @@
+.box {
+    position: relative;
+    margin: 10%;
+}
+div {
+    width: 480px;
+    height: 272px;
+    border-radius: 20px;
+
+    position: absolute;
+}
+.shadow {
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: blur(20px);
+    transition: 1s;
+}
+.obj {
+    background-color: rgb(200, 240, 250);
+}
+.grad {
+    background: linear-gradient(130deg,
+    rgba(165, 240, 240, 0.4),
+    rgba(155, 235, 220, 0.7),
+    rgba(120, 230, 200, 1));
+}
+.top {
+    background-color: rgb(81, 185, 180);
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier();
+}
+.top:hover {
+    opacity: 0;
+}

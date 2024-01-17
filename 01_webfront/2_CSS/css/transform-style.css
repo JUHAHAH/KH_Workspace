@@ -1,0 +1,137 @@
+img {
+    width: 250px;
+}
+
+/* transform: 변형과 관련된 속성 */
+
+/* CSS 속성 작성시 크로스 브라우저(브라우저가 다른 경우) 처리 방법 */
+/* -ms- : 마이크로소프트 계열(익스플로어, 엣지) */
+/* -webkit- : 크롬 / 사파리 */
+/* -o- : 오페라 */
+/* -moz- : 모질라 계열(파이어폭스) */
+
+/* 좌우 이동 */
+.trans-x-2d:hover {
+    transition: 0.5s;
+    -webkit-transform: translateX(100px); /* 개발 소프트웨어에 따라 지정(크로스) 가능 */
+    -ms-transform: translateX(100px);
+    /* 대부분의 경우 지정 안해도 적용됨 */
+    transform: translateX(100px);
+}
+
+/* 상하 이동 */
+.trans-y-2d:hover {
+    transition: 0.5s;
+    transform: translateY(-100px);
+}
+
+/* 대각선 이동 */
+.trans-xy-2d:hover {
+    transition: 0.5s;
+    transform: translate(100px, -100px);
+}
+
+/* 가로 방향 확대 */
+.trans-x-scale-2d:hover {
+    transition: 0.5s;
+    transform: scaleX(2);
+    margin-left: 25%;
+}
+
+/* 세로 방향 확대 */
+.trans-y-scale-2d:hover {
+    transition: 0.5s;
+    transform: scaleY(2);
+    margin-bottom: 200px;
+}
+
+/* 대각선 확대 */
+.trans-scale-2d:hover {
+    transition: 0.5s;
+    transform: scale(2, 2);
+    margin-bottom: 150px;
+    margin-left: 150px;
+}
+
+/* 요소 회전 */
+.trans-rotate:hover {
+    transition: 0.5s;
+    transform: rotate(180deg);
+}
+
+/* 3차원 회전 */
+/* 확대 */
+.trans-3d:hover {
+    transition: 0.5s;
+    /* perspective() : 3d 위한 원근법에서의 관점 */
+    transform: perspective(300px) translate3d(50px, 50px, 100px);
+}
+
+/* x 축 회전 */
+.trans-rotate-x-3d:hover {
+    transition: 0.5s;
+    transform: perspective(300px) rotateX(45deg);
+}
+
+/* y 축 회전 */
+.trans-rotate-y-3d:hover {
+    transition: 0.5s;
+    transform: perspective(300px) rotateY(45deg);
+}
+
+/* z 축 회전 */
+.trans-rotate-z-3d:hover {
+    transition: 0.5s;
+    transform: perspective(300px) rotateZ(45deg);
+}
+
+/* transition */
+.box {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+
+.test1:hover {
+    transition: 1s;
+    transition-duration: 1s;
+    background-color: yellow;
+}
+
+.test2:hover {
+    transition-duration: 3s;
+    transform: rotate(360deg);
+    background-color: skyblue;
+    /* 테두리 모서리 곡률 속성 */
+    border-radius: 50%;
+}
+.test2 {
+    /* ease in, ease out 둘다 적용 원하면 외부에서 설정해주기 */
+    transition-duration: 3s;
+}
+
+.test3:hover {
+    background-color: aquamarine;
+    transform: rotate(720deg);
+}
+.test3 {
+    transition-duration: 3s;
+    /* 곡률에 따른 타이밍을 지정 가능 */
+    transition-timing-function: cubic-bezier();
+}
+
+.test4:hover {
+    transform: translateX(100px);
+}
+.test4 {
+    /* delay 적용 이후 반응 */
+    transition-delay: 2s;
+    transition-duration: 3s;
+}
+
+
+
+
+
+

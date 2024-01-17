@@ -1,0 +1,100 @@
+div{
+    border : 1px solid black;
+    box-sizing: border-box; 
+    /* content + padding + border 합으로 width/height 지정 */
+}
+
+.item{
+    width: 75px;
+    height: 75px;
+}
+
+.item1{background-color: red;}
+.item2{background-color: orangered;}
+.item3{background-color: orange;}
+.item4{background-color: yellow;}
+.item5{background-color: yellowgreen;}
+.item6{background-color: green;}
+.item7{background-color: lightblue;}
+.item8{background-color: blue;}
+.item9{background-color: violet;}
+
+.flex-container {
+    height: 700px;
+    /* 부모(flesx-container)에게만 적용 > flex-box화 */
+    /* flex-box 하위 요소들을 flex 형식화 */
+    /* flex화 하면 margin과 같은 속성이 사라지고 content 만큼의 영역만 보존 */
+    display: flex;
+    
+    /* flex-direction (부모전용 속성) */
+    /* 메인축의 방향과 시작 위치를 지정하는 속성 */
+    flex-direction: row; /* row: 행방향(기본) */
+    flex-direction: row-reverse; /* 행방향이지만 역순으로 배열됨 */
+    flex-direction: column; /* column: 열방향 */
+    flex-direction: column-reverse; /* 열방향이지만 역순으로 배열됨 */
+
+    /* flex-wrap (부모전용 속성) */
+    /* 내부 아이템들을 포장하는 속성 */
+    /* 아이템들을 배치하는 방법을 지정하는 속성 */
+    flex-wrap: nowrap; /* 한줄로 배치(기본): 아이템에 변화가 있어도 한줄에 위치하는 것을 우선 */
+    flex-wrap: wrap; /* 아이템을 공간에 맞게 여러 줄로 배치 */
+    flex-wrap: wrap-reverse; /* 아이템을 여러 줄로 배치하지만 순서는 역행으로 배치 */
+
+    /* justify-content */
+    /* 메인축 방향으로 아이템의 정렬 방법을 조정 */
+    justify-content: flex-start; /* 메인축 방향으로 앞에서부터 정렬 */
+    justify-content: flex-end; /* 메인축 방향으로 뒤에 붙어서 정렬 */
+    justify-content: center; /* 메인축 방향으로 가운데 정렬 */
+    justify-content: space-around; /* 메인축 방향으로 일정한 간격을 유지 > 아이템간의 간격도 동이랗기 때문에 차이가 있음 */
+    justify-content: space-evenly; /* 메인축 방향으로 일정한 간격을 유지 > 아이템 사이의 거리도 동일하게 유지 */
+    justify-content: space-between; /* 메인축 방향으로 일정한 간격을 유지 > 아이템 이외의 공간은 적용하지 않음 */
+
+    /* align-items */
+    /* 아이템들을 교차축 방향으로 정렬하는 방법을 지정 (content가 x축이라면 items는 y로 생각)*/
+    align-items: flex-end;
+    align-items: center;
+}
+
+/* 요소 정가운데 배치하기 */
+#con {
+    display: flex;
+    width: 450px;
+    height: 450px;
+
+    justify-content: center;
+    align-items: center;
+}
+#center {
+    width: 80px;
+    height: 80px;
+    background-color: red;
+}
+
+/* flex-basis */
+/* 아이템에게 주는 flex 속성 */
+.flex-container {
+
+}
+.basis-20 {
+    flex-basis: 20%;
+}
+
+.basis-30 {
+    flex-basis: 30%;
+}
+
+.basis-50 {
+    flex-basis: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
