@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+main {
+    width: 1140px;
+    height: 3000px;
+    margin: auto;
+}
+
+header {
+    height: 200px;
+    display: flex;
+}
+header > section:nth-of-type(1), 
+header > section:nth-of-type(3) {
+    flex-basis: 15%;
+}
+header > section:nth-of-type(1) {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+header > section:nth-of-type(2) {
+    flex-basis: 70%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+#home-logo {
+    width: 120px;
+}
+
+/* 검색 스타일 */
+.search-area {
+    width: 500px;
+}
+.search-area fieldset {
+    border: 2px solid rgba(23, 68, 151);
+    border-radius: 5px;
+    margin: 0px;
+    padding: 2px;
+
+    display: flex;
+    justify-content: space-between;
+}
+#query {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+
+    /* 포커스(입력시) 테두리 생기는 것을 방지 */
+    outline: none; /* none 혹은 0 */
+    flex-basis: 92%;
+}
+#search-btn {
+    flex-basis: 8%;
+    cursor: pointer; /* 커서를 포인터로 */
+    color: rgba(23, 68, 151); /* .ico 혹은.svg 파일은 폰트로 인식되기 때문에 폰트와 같이 사용 */
+    font-size: 18px;
+    border: none;
+    background-color: transparent; /* transparent 알파값 0으로 */
+}
+
+/* 네비게이션 바 */
+nav {
+    background-color: white;
+    height: 50px;
+    border-bottom: 2px solid black;
+    /* 화면의 변화를 통해 임계점에 도달하면 특정 위치에 고정(fixed) 옵션 */
+    /* 기본값은 static*/
+    position: sticky;
+    /* top, bottom, left, right 지정 필수! */
+    /* 어디에 고정될지를 지정해야되기 때문에 */
+    top: 0;
+}
+/* nav에 존재하는 ul 스타일 초기화 */
+nav > ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+nav li {
+    flex-basis: 150px;
+
+}
+nav a {
+    text-decoration: none; /* 텍스트의 스타일 조정 가능(밑 줄 없애기) */
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    height: 100%;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 7px;
+}
+nav a:hover {
+    color: white;
+    background-color: rgba(23, 68, 151);
+    border-radius: 7px;
+}
+nav a {
+    transition-duration: 0.2s;
+}
+
+/* 콘텐츠 영역 */
+.content {
+    height: 800px;
+    display: flex;
+}
+.content-1 {
+    flex-basis: 70%;
+}
+.content-2 {
+    flex-basis: 30%;
+}
+form[name="login-form"] {
+    height: 1px;
+    padding: 15px;
+    margin-top: 5px;
+}
+form[name="login-form"] > label {
+    margin-top: 5px;
+    font-size: 12px;
+    flex-basis: 20%;
+}
+#signup-find-area {
+    flex-basis: 20%;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+#signup-find-area > a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+#signup-find-area > span {
+    padding: 0 10px;
+}
+#id-pw-area {
+    flex-basis: 60%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd;
+}
+#id-pw-area > section:first-child {
+    flex-basis: 75%;
+    display: flex;
+    flex-direction: column;
+}
+#id-pw-area > section:last-child {
+    flex-basis: 25%;
+}
+#id-pw-area input {
+    border: 0;
+    outline: none;
+    padding: 5px;
+    flex-basis: 50%;
+    border-right: 1px solid #ddd;
+}
+#id-pw-area input:first-child {
+    border-bottom: 1px solid #ddd;
+}
+#id-pw-area input:focus {
+    border: solid 2px rgba(23, 68, 151);
+}
+
+/* 로그인 버튼 */
+#id-pw-area button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#id-pw-area button:hover {
+    background-color: rgba(23, 68, 151);
+    color: white;
+}
+
+/* footer */
+footer {
+    height: 200px;
+    background-color: rgb(216, 227, 248);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer > p {
+    font-weight: bold;
+
+}
+footer > section > * {
+    font-size: 14px;
+}
+footer a {
+    color: black;
+    text-decoration: none;
+}
+footer span {
+    padding: 0 10px;
+}
+
+/* 미디어 쿼리 (반응형 연습) */
+/* 해상도가 0-767px(max) 사이에 해당 스타일을 적용 */
+@media all and (max-width: 767px) {
+    main {
+        /* viewport 단위: vw (퍼센트 단위) */
+        width: 100vw;
+    }
+    header {
+        display: none;
+    }
+    nav {
+        width: 100%;
+        border-bottom: none;
+        height: auto;
+    }
+    nav > ul {
+        display: flex;
+        flex-direction: column;
+    }
+    nav li {
+        flex-basis: auto;
+        border-bottom: 1px solid #ddd;
+    }
+    footer a {
+        font-size: 12px;
+    }
+}
+/* 이외에도 적용하고 싶은 기종의 해상도 찾아서 적용 */
+@media all and (min-width: 760px) and (max-width: 1023px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

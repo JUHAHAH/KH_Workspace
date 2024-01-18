@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱태그연습</title>
+    <link rel="stylesheet" href="./시맨틱태그연습.css">
+    <script src="https://kit.fontawesome.com/43a7731709.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <!--로고(클릭시 메인으로 이동)-->
+            <section>
+                <a href="#">
+                    <img src="../../Asset/images/logo.jpg" alt="" id="home-logo">
+                </a>
+            </section>
+            <!--검색창-->
+            <section>
+                <section class="search-area">
+                    <!--form 내부 input 태그값을 서버로 전달(검색창 독립)-->
+                    <form action="#" name="search-form">
+                        <!--fieldset: form 내부에서 input을 묶는 용도-->
+                        <fieldset>
+                            <!--search 옵션: text와 기능적으로 동일, 브라우저마다 지원 기능 다름-->
+                            <!--autocomplete 옵션: html 기본 자동완성(최근 검색) 기능 끄기-->
+                            <input type="search" id="query" name="query" autocomplete="off" placeholder="검색어를 입력해주세요">
+                            <button class="fa-solid fa-magnifying-glass" id="search-btn"></button>
+                        </fieldset>
+                    </form>
+                </section>
+            </section>
+            <!--여백-->
+            <section>
+            </section>
+        </header>
+
+        <nav>
+            <!--네비에깅션 바 같이 나열되어있는 경우 ul(list) 태그를 주로 사용-->
+            <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자유게시판</a></li>
+                <li><a href="#">질문게시판</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">1:1문의</a></li>
+            </ul>
+        </nav>
+        <!--메인 콘텐츠-->
+        <section class="content">
+            <!--비워둔 영역-->
+            <section class="content-1"></section>
+            <!--아이디 비번 영역--> 
+            <section class="content-2">
+                <form action="#" name="login-form">
+                    <fieldset id="id-pw-area">
+                        <section>
+                            <input type="text" name="input-id" id="" placeholder="아이디">
+                            <input type="password" name="input-pw" id="" placeholder="비밀번호">
+                        </section>
+                        <section>
+                        <button>로그인</button>
+                        </section>
+                    </fieldset>
+                    <label><input type="checkbox" name="save-id" id="">아이디저장</label>
+                    <!--회원가입/아이디 패스워드 찾기-->
+                    <section id="signup-find-area">
+                        <a href="#">회원가입</a>
+                        <span>|</span>
+                        <a href="#">ID/PW 찾기</a>
+                    </section>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>
+            Copyright &copy; KH Iformation Educational Institude E-Class
+            <section>
+                <a href="#">프로젝트 소개</a>
+                <span>|</span>
+                <a href="#">프로젝트 소개</a>
+                <span>|</span>
+                <a href="#">프로젝트 소개</a>
+                <span>|</span>
+                <a href="#">프로젝트 소개</a>
+                <span>|</span>
+            </section>
+        </p>
+    </footer>
+</body>
+
+</html>

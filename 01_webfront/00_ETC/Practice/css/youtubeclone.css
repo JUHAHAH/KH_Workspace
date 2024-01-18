@@ -1,0 +1,345 @@
+/* * {
+    border: black 1px solid;
+    box-sizing: border-box;
+} */
+button:hover {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+body {
+    margin: 0;
+}
+
+/* Main */
+main {
+    height: 3000px;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    padding: 3px;
+    height: 48px;
+    background-color: white;
+
+    display: flex;
+}
+.header {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Menu(Bars) */
+.menu {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
+.menu > a {
+    display: flex;
+}
+.menu > #space {
+    width: 10px;
+}
+#premium-icon {
+    height: 30px;
+    width: 100px;
+}
+#bars {
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 50%;
+    border: none;
+
+    width: 30px;
+    height: 30px;
+    transition: 0.1s;
+}
+#bars:hover {
+    background-color: rgb(220, 220, 215);
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search #search-bar {
+    width: 600px;
+    height: 38px;
+    border-radius: 30px;
+    border: gray solid 1px;
+    background-color: white;
+    box-shadow: inset 0px 0px 5px rgba(80, 80, 80, 0.3);
+    outline: none;
+
+    display: flex;
+    justify-self: space-between;
+}
+#search-bar {
+    justify-content: space-between;
+}
+#search-input {
+    display: flex;
+}
+#search-input > #space {
+    width: 10px;
+}
+#search-input > input {
+    background-color: transparent;
+    font-size: 16px;
+    flex-basis: 1;
+    width: 480px;
+    outline: none;
+    border: none;
+}
+#vk {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+}
+#search-icon {
+    display: flex;
+}
+#search-icon > button {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    outline: none;
+    border: transparent;
+    border-left: gray 1px solid;
+    width: 60px;
+    font-size: 18px;
+    flex-basis: 100%;
+}
+.search > #space {
+    flex-basis: 100%;
+}
+#mic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+
+/* Account */
+.account {
+    display: flex;
+    height: 100%;
+}
+.account section {
+    width: 35px;
+}
+.account button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    flex-basis: 100%;
+    height: 100%;
+    font-size: 22px;
+}
+.account button:last-child {
+    font-size: 35px;
+    color: rgb(29, 54, 122);
+}
+
+/* Content */
+.content {
+    display: flex;
+    height: 100%;
+}
+.content > #space {
+    width: 5.5%;
+}
+
+/* Main Content */
+.content-main {
+    padding: 10px;
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Video */
+#video {
+    display: flex;
+    justify-content: center;
+}
+#video:first-child {
+    margin-top: 12px;
+}
+
+/* Title */
+#title b {
+    line-height: 1.8;
+    font-size: 20px;
+}
+
+/* Channel */
+.subscription {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+#channel {
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+#channel-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#channel-icon img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+#channel > #space {
+    width: 7px;
+}
+#channel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+}
+#channel-name {
+    flex-basis: 60%;
+}
+#channel-name > p {
+    font-weight: bold;
+    margin: 0;
+}
+#channel-subs {
+    flex-basis: 40%;
+}
+#channel-subs > p {
+    margin: 0;
+    font-size: 11px;
+}
+
+/* Subscription */
+#subscription-button {
+    border-radius: 20px;
+    height: 35px;
+    width: 62px;
+    flex-basis: 100%;
+    background-color: rgb(32, 32, 34);
+    color: white;
+}
+#channel-share {
+    display: flex;
+    align-items: center;
+}
+#channel-share #space {
+    width: 5px;
+}
+#channel-share #share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: rgb(240, 240, 235);
+    font-size: 18px;
+    border-radius: 20px;
+    height: 32px;
+}
+#channel-share h4 {
+    font-size: 15px;
+    font-weight: 100;
+}
+#channel-share #split {
+    margin: 0;
+}
+#channel-share > button:last-of-type {
+    width: 32px;
+}
+#channel-like {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(240, 240, 235);
+}
+#channel-like > button:first-of-type {
+    border-radius: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#channel-like > button:last-of-type {
+    border-radius: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.description {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#description-box {
+    flex-basis: 100%;
+    height: 100%;
+    background-color: rgb(240, 240, 235);
+    border-radius: 10px;
+}
+#description-box:active {
+}
+
+/* Comment */
+.comment-info {
+    height: 40px;
+    display: flex;
+}
+.comment-info > h4 {
+    margin: 0;
+    height: 100%;
+    font-size: 20px;
+}
+.comment-info #space {
+    width: 15px;
+}
+.comment-info #sort-comment {
+    display: flex;
+    align-items: center;
+    font-size: 18;
+    height: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+#sort-comment > h4 {
+    margin: 0;
+}
+
+/* Comment Input */
+#user {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 35px;
+    color: rgb(29, 54, 122);
+}
+
+
+
+
+
+
+
+.content-side {
+    width: 23%;
+    height: 100%;
+}

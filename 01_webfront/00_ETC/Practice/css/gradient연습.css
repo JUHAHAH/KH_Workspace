@@ -9,15 +9,15 @@ div {
 
     position: absolute;
 }
-.shadow {
+.shadow { /* Shadow */
     background-color: rgba(0, 0, 0, 0.3);
     filter: blur(20px);
     transition: 1s;
 }
-.obj {
+.obj { /* Base Color */
     background-color: rgb(200, 240, 250);
 }
-.grad {
+.grad { /* Gradient Color */
     background: linear-gradient(130deg,
     rgba(165, 240, 240, 0.4),
     rgba(155, 235, 220, 0.7),
