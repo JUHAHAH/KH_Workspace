@@ -2,11 +2,10 @@
     border: black 1px solid;
     box-sizing: border-box;
 } */
-button:hover {
-    cursor: pointer;
-}
+
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 body {
     margin: 0;
@@ -131,6 +130,13 @@ header {
 }
 
 /* Account */
+.account > #my-profile > img {
+    display: flex;
+    object-fit: cover;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
 .account {
     display: flex;
     height: 100%;
@@ -145,10 +151,6 @@ header {
     flex-basis: 100%;
     height: 100%;
     font-size: 22px;
-}
-.account button:last-child {
-    font-size: 35px;
-    color: rgb(29, 54, 122);
 }
 
 /* Content */
@@ -185,6 +187,7 @@ header {
 
 /* Channel */
 .subscription {
+    margin: 8px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,8 +205,8 @@ header {
 }
 #channel-icon img {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
 }
 #channel > #space {
     width: 7px;
@@ -282,14 +285,21 @@ header {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+#share:hover {
+    background-color: rgb(220, 220, 215);
+}
 
+/* Description */
 .description {
     height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 15px;
 }
 #description-box {
+    position: relative;
+    padding: 5px;
     flex-basis: 100%;
     height: 100%;
     background-color: rgb(240, 240, 235);
@@ -325,12 +335,237 @@ header {
 }
 
 /* Comment Input */
+.comment-input {
+    margin: 5px 0px 20px 0px;    
+    padding: 0;
+    display: flex;
+}
+#comment-text {
+    flex-basis: 100%;
+}
+#comment-text input {
+    padding-top: 0;
+    flex-basis: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px rgb(220, 220, 215) solid;
+    font-size: 14px;
+}
+#my-profile > img {
+    margin-right: 5px;
+    object-fit: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+#comments-other {
+    display: flex;
+    height: 80px;
+}
+#profile {
+    margin-right: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#profile > img {
+    object-fit: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
 #user {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px;
+}
+#user h4 {
+    margin: 0;
+    padding: 0;
+}
+#user-info {
+    display: flex;
+    align-items: baseline;
+}
+#user-info #space {
+    width: 5px;
+}
+#user-id h4 {
+    font-size: 12px;
+}
+#visit-date h4 {
+    font-size: 10px;
+    font-weight: 100;
+    color: gray;
+}
+#user-comment {
+    font-size: 12px;
+    font-weight: normal;
+}
+#user-button {
+    display: flex;
+}
+#likes {
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+}
+#likes h4 {
+    font-size: 12px;
+    font-weight: 100;
+    color: gray;
+}
+#user-button > button {
+    border-radius: 50%;
     background-color: transparent;
     border: none;
     outline: none;
-    font-size: 35px;
-    color: rgb(29, 54, 122);
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    transition: 0.1s;
+}
+#user-button > button:hover {
+    background-color: rgb(220, 220, 215);
+}
+#user-button > a {
+    border-radius: 16px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
+}
+#user-button > a:hover {
+    background-color: rgb(220, 220, 215);
+}
+#user-button > a > h4 {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: 100;
+}
+#user-button #space {
+    width: 12px;
+}
+
+
+
+
+/* Side */
+.content-side {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 23%;
+    height: 100%;
+    align-items: center;
+}
+.content-side > #space {
+    height: 12px;
+}
+.content-side > section {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#live {
+    height: 100px;
+    font-weight: 100;
+    font-size: 14px;
+}
+#live section {
+    margin: 5px;
+}
+#side-button {
+    padding: 0px 2px;
+    justify-content: flex-start;
+}
+#side-button > a {
+    color: black;
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: rgb(240, 240, 235);
+    border-radius: 6px;
+    margin-right: 8px;
+    transition: 0.2s;
+}
+#side-button > a:hover {
+    background-color: rgb(220, 220, 215);
+}
+#side-button > a:first-of-type {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+}
+
+#videos {
+    display: flex;
+    height: 100px;
+}
+#vid-thumb {
+    width: 100%;
+    height: 100%;
+    flex-basis: 40%;
+    display: flex;
+}
+#vid-thumb > img {
+    flex-basis: 100%;
+    width: 100%;
+    height: 100%;
+    margin-right: 5px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+#vid-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 60%;
+    height: 100%;
+}
+#vid-title {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+#vid-uploader {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+#vid-views {
+    display: flex;
+    align-items: center;
+}
+#vid-title > section {
+    font-size: 16px;
+    margin: 3px 0;
+    flex-basis: 100%;
+}
+#vid-uploader > section {
+    margin: 0;
+    font-size: 12px;
+    margin-top: 3px;
+    flex-basis: 100%;
+}
+#dot > i {
+    text-align: center;
+    font-size: 2px;
+    width: 10px;
+}
+#vid-views > section {
+    display: flex;
+    margin: 0;
+    margin-bottom: 12px;
+}
+#vid-views {
+    font-size: 12px;
 }
 
 
@@ -339,7 +574,9 @@ header {
 
 
 
-.content-side {
-    width: 23%;
-    height: 100%;
+
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(220, 220, 215);
 }
