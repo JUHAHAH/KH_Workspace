@@ -36,6 +36,7 @@ function multiFn() { //곱셈
     const value2 = number2.value;
 
     var answ = Number(value1) * Number(value2);
+    document.get
 
     result.innerText = answ;
 }
@@ -64,6 +65,7 @@ const num2 = document.getElementById("num2");
 const num3 = document.getElementById("num3");
 
 const total = document.getElementById("total");
+document.get
 
 function totalFn() {
     const value1 = Number(num1.value); 
@@ -122,7 +124,16 @@ function check() {
     console.log(a, b, c);
 }
 
+//연습문제2-----------------------------------------------------------
 
+const userName = document.getElementById("userName");
+const userAge = document.getElementById("userAge");
+const userGender = document.getElementById("userGender");
+
+function printJSObject() {
+    const userInfo = {이름: userName.value, 성별: userGender.value, 나이: userAge.value};
+    console.log(userInfo);
+}
 
 
 

@@ -161,3 +161,18 @@ console.log(sumFn(5, 7));
 console.log(typeof(sumFn(5, 7)));
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

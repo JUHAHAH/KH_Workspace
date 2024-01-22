@@ -1,0 +1,90 @@
+/* Default Settings */
+* {
+    /* Reset Outline and Decoration */
+    outline: none;
+    background: none;
+    text-decoration: none;
+    color: black;
+
+    /* Temporary Reference Border */
+    border: 1px solid rgba(80, 80, 80, 0.3);
+    box-sizing: border-box;
+
+    /* Reset Margin and Padding */
+    margin: 0;
+    padding: 0;
+}
+button:hover, a:hover {
+    /* Display Pointer if Hover */
+    cursor: pointer;
+}
+
+/* Body */
+body {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50px;
+
+    height: 2000px;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-basis: 10vh;
+
+    position: sticky;
+    top: 0;
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-basis: 100%;
+}
+
+/* Content */
+.content {
+    display: flex;
+    flex-basis: 100%;
+}
+
+/* Side Bar */
+.side {
+    display: flex;
+    flex-basis: 15%;
+}
+
+
+/* Footer */
+footer {
+    flex-basis: 10vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
