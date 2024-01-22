@@ -1,0 +1,19 @@
+* {
+    /* Reset Outline and Decoration */
+    outline: none;
+    background: none;
+    text-decoration: none;
+    color: black;
+
+    /* Temporary Reference Border */
+    border: 1px solid rgba(80, 80, 80, 0.3);
+    box-sizing: border-box;
+
+    /* Reset Margin and Padding */
+    margin: 0;
+    padding: 0;
+}
+button:hover, a:hover {
+    /* Display Pointer if Hover */
+    cursor: pointer;
+}
