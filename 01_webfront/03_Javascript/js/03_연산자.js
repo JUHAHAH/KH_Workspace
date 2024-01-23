@@ -135,6 +135,33 @@ function printJSObject() {
     console.log(userInfo);
 }
 
+function test() {
+    const value1 = number1.value;
+    const value2 = number2.value;
+
+    if (value1 == value2) {
+        console.log("equal");
+    } else {
+        console.log("different");   
+    }
+}
+
+function calc() {
+    let val1 = Number(document.getElementById("val1").value);
+    let val2 = Number(document.getElementById("val2").value);
+    let val = (document.getElementById("val").value);
+
+    let method = document.getElementById("calcInput").value;
+    
+    if (method == "+") {
+    }
+
+    
+}
+
+
+
+
 
 
 
