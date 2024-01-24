@@ -1,0 +1,63 @@
+/* 카카오톡 채팅화면 만들기 */
+.chat > * {
+    /* Reset Outline and Decoration */
+    outline: none;
+    background: none;
+    text-decoration: none;
+    color: black;
+
+    /* Temporary Reference Border */
+    border: 1px solid rgba(80, 80, 80, 0.3);
+    box-sizing: border-box;
+
+    /* Reset Margin and Padding */
+    margin: 0;
+    padding: 0;
+}
+button:hover, a:hover {
+    /* Display Pointer if Hover */
+    cursor: pointer;
+}
+
+.chat { /* 전체 요소 */
+    width: 360px;
+    border: 1px solid black;
+    margin: 50px 20px;
+}
+
+#chat-bg {
+    background-color: rgb(178, 199, 217);
+    width: 100%;
+    height: 400px;
+
+    overflow: auto; /* 내부요소가 감싸는 부분을 제어하는 요소: 넘치면 스크롤 생성 */
+    /* overflow: hidden 은 넘치는 부분을 숨김 */
+}
+
+#chat-bg > p { /* 채팅 칸 */
+    margin: 20px 10px;
+    text-align: right;
+}
+
+#chat-bg > p > span { /* 채팅 창 */
+    background-color: rgb(254, 234, 51);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#chat-input { /* 입력 부분 */
+    width: 100%;
+    display: flex;
+    height: 25px;
+}
+
+#chat-input > input {
+    height: 75%;
+    width: 90%;
+    padding-left: 5px;
+}
+
+#chat-input > button {
+    height: 100%;
+    width: 20%;
+}

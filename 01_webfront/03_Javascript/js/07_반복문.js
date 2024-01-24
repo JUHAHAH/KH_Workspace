@@ -85,7 +85,7 @@ function executeFn2() {
 	}
 }
 
-//입력받은 단 출력하기------------------------------
+//입력받은 단 출력하기---------------------------------------
 const input3 = document.getElementById("input3");
 const result3 = document.getElementById("result3");
 
@@ -96,8 +96,9 @@ function executeFn3() {
     result3.innerHTML = "";
 
     if (val < 2 || val > 9) {
-        alert("2~9 사이의 값을 넣어주세요")
+        alert("2~9 사이의 값을 넣어주세요");
         input3.value = null;
+		return; //함수를 종료하고 호출한 곳으로 돌아감
 
     } else {
         for(let i=1; i<=val; i++) {
@@ -106,3 +107,108 @@ function executeFn3() {
         }
     }
 }
+
+//중첩 반복문(for)---------------------------------------------
+function check8() {
+	let result = "";
+	//네바퀴 반복하는 for문
+	for(let i=1; i<=4; i++) {
+		result = "";
+
+		for(let i=1; i<=5; i++) {
+			result += i;
+		}
+
+		console.log(result);
+	}
+}
+
+function check9() {
+	
+	//중첩 안함
+	// for(let i=1; i<=5; i++) {
+	// 	result += i;
+	// 	console.log(result);
+	// }
+
+	//중첩
+	for(let i=1; i<=5; i++) {
+		let result = "";
+		for(let x=1; x<=i; x++) {
+			result += x;
+		}
+		console.log(result);
+	}
+}
+
+//while문---------------------------------------------------------
+
+function check16() {
+	let val;
+	//prompt창의 취소를 누르기 전까지 계속 반복
+
+	while (val !== null) { // !== : 동일비교 연산자, 값과 자료형이 모두 다른 경우
+		val = prompt("ㅎㅇ"); // === : 값과 자료형이 모두 같은 경우
+
+		console.log(val);
+	}
+
+}
+
+//메뉴 주문하기
+function check17() {
+	//메뉴 가격
+	const kimbab = 3000; //김밥
+	const ramen = 3500; //라면
+	const katsu = 5000; //돈까스
+	//메뉴 주문 수
+	let kimbab_count = 0;
+	let ramen_count = 0;
+	let katsu_count = 0;
+
+	//prompt 입력값 저장 함수
+	let input;
+
+	while(input !== null) { // 취소 누를 때까지 반복
+		input = prompt("메뉴 번호를 입력하세요");
+
+		switch(input) {
+			case "1" : kimbab_count += 1; break;
+			case "2" : ramen_count += 1; break;
+			case "3" : katsu_count += 1; break;
+			case null : alert("주문 완료"); break;
+			default: alert("메뉴에 작성된 번호만 입력해주세요"); break;
+		}
+	}
+
+	alert(`김밥: ${kimbab_count}, 라면: ${ramen_count}, 돈까스: ${katsu_count}`);
+	let sum = (kimbab_count * kimbab) + (ramen_count * ramen) + (katsu_count * katsu);
+	alert(`총 금액: ${sum}`)
+}
+
+//1부터 10까지 출력하기
+function check18() {
+	let num = 1;
+
+	while(num <= 10) {
+		console.log(num);
+		num++;
+	}
+
+	console.log("------------------");
+
+	let num2 = 10;
+	
+	while(num2 != 0) {
+		console.log(num2);
+		num2--;
+	}
+}
+
+
+
+
+
+
+
+

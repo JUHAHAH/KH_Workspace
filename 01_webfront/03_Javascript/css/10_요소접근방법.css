@@ -1,0 +1,29 @@
+.cls-test {
+    width: 400px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+#name-div {
+    width: 300px;
+    height: 100px;
+    border: 1px black solid;
+}
+/* CSS에 커스텀 속성을 선택하는 방법 [커스텀 속성 = "속성값"] */
+[target-div="css-div"] {
+    width: 200px;
+    height: 200px;
+    border: black 1px solid;
+}
+/* [target-div="css-div"]의 자식 div */
+[target-div="css-div"] > div {
+    height: 50%;
+}
+/* 자식중 첫번째 자식과 마지막 자식에 접근 */
+[target-div="css-div"] > div:first-child {
+    background-color: pink;
+}
+
+[target-div="css-div"] > div:last-child {
+    background-color: aquamarine;
+}
