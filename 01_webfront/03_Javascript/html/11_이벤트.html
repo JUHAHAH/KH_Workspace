@@ -1,0 +1,85 @@
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_이벤트</title>
+    <link rel="stylesheet" href="../css/11_이벤트.css">
+</head>
+
+<body>
+    <h1>이벤트: 동작/행위</h1>
+    <pre>
+    > 브라우저에서 가능한 동작
+
+    ex) click, keyup, keydown, keypress, mouseover, mouseon, mouseout
+        mouseleave, drag, change, submit...etc
+
+    > 이벤트 리스너(Event Listener)
+        -브라우저에서 이벤트가 감지 될때까지 대기하다
+        감지되었을때 기능(함수) 수행
+
+        > on이벤트명 (ex) onclick, onchange, onsubmit)
+    
+        ex) onclick, onchange, onsubmit
+ 
+    > 이벤트 핸들러(Event Handler)
+        -이벤트 리스너에 연결된 기능
+        이벤트다 감지되었을 때 수행하는 내용
+    </pre>
+    <hr><hr>
+    <h3>인라인 이벤트 모델(inline)</h3>
+    <pre>
+        -HTML 요소에 (이벤트 리스너 = "이벤트 핸들러")
+
+        -하나의 요소에 동일한 이벤트 핸들러를 중복 작성할 수 없다
+        (이전에 작성된 이벤트를 새로운 이벤트를 덮어쓰기함)
+
+        -많이 사용은 안하지만 종종 사용함
+
+        -인라인 이벤트 작성시 this 키워드
+        (이벤트가 발생한 현재 요소 반환)
+    </pre>
+    <!-- 인라인 이벤트 onclick = 이벤트 리스너, check() = 이벤트 리스너, this = 요소 반환-->
+    <button onclick="check1(this)" style="background-color: aquamarine;">인라인 이벤트 모델 확인</button> 
+    <hr>
+    <h3>고전 이벤트 모델</h3>
+    <pre>
+        -HTML 요소에 이벤트를 직접 작성하지 않고
+        JS에서 독자의 이벤트 관련 코드를 작성하는 방법
+
+        -하나의 요소에 동일한 이벤트 핸들러(X)
+    </pre>
+    <button id="test1-1">고전 이벤트 모델 확인</button>
+    <button id="test1-2">고전 이벤트 모델 제거</button>
+    <button id="test1-3">고전 이벤트 모델 단점</button>
+    <hr><hr>
+    <h1>표준 이벤트 모델(요소.addEventListener())</h1>
+    <pre>
+        -W3C (웹표준 제정 단체)에서 공식적으로 지정한 이벤트 모델
+
+        -장점: 한 요소에 중복되는 이벤트 리스너를 만들어 
+               여러 이벤트 핸들러를 추가 가능
+    </pre>
+    <div id="test2">클릭!</div>
+    <hr>
+    <h3>입력한 색상으로 배경색 변경하기</h3>
+    <div class="container3">
+        <div id="box3"></div>
+        <input type="text" id="input3" placeholder="색상입력">
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="../js/11_이벤트.js"></script>
+</body>
+
+</html>

@@ -47,7 +47,7 @@ function check4() {
 }
 
 //0부터 9까지 5줄 출력/ 각 줄에서 4의 배수는 건너뛰기/ 3번째 줄 출력후 멈추기
-function check5() {
+function check5() { 
     for(let i=1; i<=5; i++) {
         let result = "";
 

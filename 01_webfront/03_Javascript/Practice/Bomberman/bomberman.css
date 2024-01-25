@@ -1,0 +1,57 @@
+/* Default Setting */
+* {
+    /* Reset Outline and Decoration */
+    outline: none;
+    background: none;
+    text-decoration: none;
+    color: black;
+
+    /* Temporary Reference Border */
+    /* border: 1px solid rgba(80, 80, 80, 0.3); */
+    box-sizing: border-box;
+
+    /* Reset Margin and Padding */
+    margin: 0;
+    padding: 0;
+}
+button:hover, a:hover {
+    /* Display Pointer if Hover */
+    cursor: pointer;
+}
+
+/* Map */
+#map {
+    width: 800px;
+    height: 800px;
+    position: relative;
+}
+
+#container {
+    width: 800px;
+    height: 800px;
+    position: relative;
+
+    display: flex;
+
+    border: black 3px solid;
+}
+
+#player {
+    background-size: 100px;
+    height: 100px;
+    width: 100px;
+    background-image: url("./Assets/bomberman.png");
+
+    overflow: hidden;
+
+    position: absolute;
+}
+
+#bomb {
+    background-image: url("./Assets/boom.png");
+    background-size: 50px;
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+}

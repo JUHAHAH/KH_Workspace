@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_함수호출</title>
+    <link rel="stylesheet" href="#">
+</head>
+
+<body>
+    <h1>함수(function)</h1>
+    <pre>
+        -목표하는 결과를 만들기 위한 코드의 묶음
+
+        -코드를 블록으로 묶어 작성하고 붙여진 이름을 호출해서 사용
+
+        *함수 선언
+        *함수 정의
+        *함수 호출
+
+        [기본 함수 형태]
+
+        function 함수명() { 함수 선언
+
+            내용물: 함수 정의
+        
+        }
+
+        함수명(); 함수명 호출
+    </pre>
+    <input type="number" id="input1">
+    <button id="btn1">확인하기</button>
+    <br><br>
+    <hr>
+    <br>
+    <button id="btn2a">매개 변수로 배열 전달하기</button>
+    <button id="btn2b" onclick="btn2bFn(this)">매개 변수로 요소 전달하기</button>
+    <button id="btn2c">매개 변수로 함수 전달하기</button>
+    <br><br>
+    <hr><hr><hr>
+    <h1>return (반환)</h1>
+    <pre>
+    - 현재 수행중인 함수를 종료하고 호출한 곳으로 돌아감
+
+    - 호출한 곳으로 돌아갈 때 return 옆에 작성된 값을
+        가지고 돌아갈 수 있다.
+
+        ex)  return 100; // 호출한 곳으로 100을 가지고 돌아감
+
+    - 함수 마지막에 return 구문이 생략되어 있다면
+        자동으로 return;  구문이 추가된다
+    </pre>
+    <button id="btn3a">return 확인하기 1</button>
+
+
+
+
+
+    <script src="../js/14_함수.js"></script>
+</body>
+
+</html>
