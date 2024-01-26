@@ -1,0 +1,139 @@
+/* Default Setting */
+* {
+    /* Reset Outline and Decoration */
+    /* outline: none;
+    background: none;
+    text-decoration: none;
+    color: black; */
+
+    /* Temporary Reference Border */
+    /* border: 1px solid rgba(80, 80, 80, 0.3); */
+    box-sizing: border-box;
+
+    /* Reset Margin and Padding */
+    margin: 0;
+    padding: 0;
+}
+button:hover, a:hover {
+    /* Display Pointer if Hover */
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    height: 500px;
+}
+
+#phone {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 10px;
+}
+
+#phoneNumber {
+    flex-basis: 10%;
+}
+#phoneInput {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 80%;
+    border-top: grey 1px solid;
+}
+#phoneInput > button {
+    flex-basis: 33.3%;
+    font-weight: bold;
+    font-size: 19px;
+    background-color: transparent;
+    border: none;
+}
+
+#book {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-left: grey solid 1px;
+    padding: 10px;
+}
+
+#book > h4 {
+    text-align: center;
+}
+
+#book button {
+    background-color: white;
+    height: 18px;
+    width: 18px;
+    margin-left: 2px;
+}
+#number * {
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+#number > div {
+    font-weight: bold;
+}
+
+#book > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#book > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#phone > button {
+    border-radius: 5px;
+    margin-top: 2px;
+    background-color: transparent;
+}
+
+#phoneAdd {
+    border: green 2px solid;
+}
+#phoneAdd:hover {
+    background-color: rgba(98, 243, 207, 0.37);
+}
+
+#phoneRemove {
+    border: plum 2px solid;
+}
+#phoneRemove:hover {
+    background-color: rgba(237, 160, 247, 0.37);
+}
+
+#phoneNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav {
+    width: 100px;
+    outline: none;
+    border: none;
+}
+
+.remove {
+    border: none;
+    outline: none;
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

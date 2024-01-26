@@ -124,8 +124,80 @@ btn3a.addEventListener("click", function() {
     console.log('합계: ', sumFn(numbers));
 });
 
+//익명함수----------------------------------------------
+
+//생략
+
+//화살표 함수-------------------------------------------
+//ES6(ECMAScript 6) ECMA에서 제시한 귝겨에 따른 표준화된 언어
+
+const arrowList = document.querySelectorAll(".arrow");
+console.log(arrowList);
+
+//화살표 함수 기본
+arrowList[0].addEventListener('click', () => {alert('화살표 연습')});
+
+//매개 변수가 한개인 경우: () 생략 가능
+function print3(arg0) { //매개 변수가 하나
+    const num = [3, 4, 5, 6];
+
+    console.log(arg0(num));
+}
+
+arrowList[1].addEventListener('click', e => {
+    //e: 이벤트 객체 = 모든 이벤트 관련 정보가 들어있는 객체
+    //e.target: 이벤트가 발생한 객체
+
+    e.target.style.backgroundColor = 'pink';
+
+    print3((arr) => {
+        let result = 0;
+
+        for(let i=0; i<arr.length; i++) {
+            result += arr[i];
+        }
+
+        return result;
+    });
+});
+
+//return 한줄만 작성된 경우
+function twoNumberPlus(otherFn) {
+    const input1 = Number(prompt(`첫번째 값`));
+    const input2 = Number(prompt(`두번째 값`));
+
+    alert(otherFn(input1, input2));
+}
+
+arrowList[2].addEventListener('click', () => {
+    
+    //대입되는 값이 하나이거나 return되는 값이 하나일 경우 (), 혹은 {} 생략 가능
+    twoNumberPlus((a, b) => a + b);
+});
+
+//return 한줄인데 오브젝트를 반환하는 경우
+function printObj(arg0) {
+    const obj = arg0(`홍길동`, 20);
+
+    console.log(`obj.name: ${obj.name}`);
+    console.log(`obj.age: ${obj.age}`);
+}
+
+arrowList[3].addEventListener('click', () => {
+    
+    printObj((name, age) => {
+
+        //JS 객체 {k : v, k : v}
+        //이와 같이 객체나 배열의 형태는 return이 필수
+        return {'name': name, 'age' : age};
+    });
+
+});
 
 
+//즉시 실행 함수
+//함수를 정의하자마자 () 호출해준다: 시작하자마자 작동하는 함수
+(() => {console.log(`즉시 실행 함수 테스트`)})();
 
 
 
