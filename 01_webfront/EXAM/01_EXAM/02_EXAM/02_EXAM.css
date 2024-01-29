@@ -1,0 +1,130 @@
+/* Default Setting */
+* {
+    /* Reset Outline and Decoration */
+    outline: none;
+    background: none;
+    text-decoration: none;
+    color: black;
+
+    /* Temporary Reference Border */
+    /* border: 1px solid rgba(80, 80, 80, 0.3); */
+    box-sizing: border-box;
+
+    /* Reset Margin and Padding */
+    margin: 0;
+    padding: 0;
+}
+button:hover, a:hover {
+    /* Display Pointer if Hover */
+    cursor: pointer;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+#container > div {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+}
+
+#container > div > * {
+    width: 45%;
+    margin: 15px;
+    font-weight: bold;
+}
+
+input, #normal {
+    font-weight: normal;
+}
+
+#apply {
+    border-radius: 5px;
+    border: 1px black solid;
+    width: 100px;
+    background-color: whitesmoke;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#result {
+    border: rgba(80, 80, 80, 0.3) solid 2px;
+}
+
+#center {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+
+/* 테이블로 정리--------------------------------------------- */
+#result {
+    display: flex;
+    margin: 15px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+}
+
+#align {
+    width: 15%;
+}
+
+.table * {
+    margin: 15px;
+}
+
+.table > table {
+    margin: 0;
+}
+
+.table td:nth-child(1), .table td:nth-child(3)  {
+    font-weight: bold;
+    text-align: center;
+}
+
+.table td:nth-child(2) {
+    padding-right: 18px;
+}
+
+input {
+    outline: 1px grey solid;
+    border: none;
+    border-radius: 2px;
+}
+
+#font_weight, #horizontal, #vertical {
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
