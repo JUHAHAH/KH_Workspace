@@ -28,6 +28,12 @@ fieldset > table {
     align-items: center;
 }
 
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 tr > td:first-child{
     font-weight: bold;
 }
@@ -39,6 +45,26 @@ td {
 #btn {
     text-align: center;
 }
+
+input {
+    margin-right: 5px;
+}
+
+.pass, .name {
+    display: flex;
+}
+
+.pass input, .name input {
+    display: flex;
+    width: 100px;
+    margin-right: 0px;
+}
+
+#pass-pass, #name-pass {
+    font-size: 10px;
+    font-weight: bold;
+}
+
 
 
 

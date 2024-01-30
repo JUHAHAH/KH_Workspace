@@ -11,76 +11,79 @@
 <body>
     <fieldset>
         <legend>회원가입 양식</legend>
-        
-        <table>
-            <tr>
-                <td>
-                    아이디:
-                </td>
-                <td>
-                    <input type="text" id="id">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    비밀번호:
-                </td>
-                <td>
-                    <input type="text" id="pass">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    비밀번호 확인:
-                </td>
-                <td>
-                    <input type="text" id="pass-check">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    이름:
-                </td>
-                <td>
-                    <input type="text" name="name">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    성별:
-                </td>
-                <td>
-                    <label for="m">남
-                        <input type="radio" value="male" name="sex" id="m">
-                    </label>
-                    <label for="f">여
-                        <input type="radio" value="female" name="sex" id="f">
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    전화번호:
-                </td>
-                <td>
-                    <input type="text" id="phone">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    이메일:
-                </td>
-                <td>
-                    <input type="text" id="mail">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" id="btn">
-                    <button id="reset">초기화</button>
-                    <button id="register">회원가입</button>
-                </td>
-            </tr>
-        </table>
+        <form action="" id="form">
+            <table>
+                <tr>
+                    <td>
+                        아이디:
+                    </td>
+                    <td>
+                        <input type="text" id="id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        비밀번호:
+                    </td>
+                    <td>
+                        <input type="text" id="pass">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        비밀번호 확인:
+                    </td>
+                    <td class="pass">
+                        <input type="text" id="pass-check">
+                        <div id="pass-pass"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        이름:
+                    </td>
+                    <td class="name">
+                        <input type="text" id="names">
+                        <div id="name-pass"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        성별:
+                    </td>
+                    <td class="gender">
+                        <label for="m">남
+                            <input type="radio" value="male" name="gender" id="m">
+                        </label>
+                        <label for="f">여
+                            <input type="radio" value="female" name="gender" id="f">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        전화번호:
+                    </td>
+                    <td>
+                        <input type="text" id="phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        이메일:
+                    </td>
+                    <td>
+                        <input type="text" id="mail">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="btn">
+                        <button id="reset">초기화</button>
+                        <button id="register" type="button">회원가입</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </fieldset>
 
 

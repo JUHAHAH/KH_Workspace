@@ -1,5 +1,4 @@
 const fruit = document.querySelectorAll('.fruit');
-
 const row = document.querySelectorAll('.row');
 const btn = document.querySelector('#btn');
 
@@ -18,6 +17,8 @@ btn.addEventListener('click', () => {
             num[i] = row[i].children[3].value;
         }
     }
+
+    alert(`사과는 ${Number(row[0].children[3].value)}개, 바나나는 ${Number(row[1].children[3].value)}개, 멜론은 ${Number(row[2].children[3].value)}개, 총 ${sum}원입니다`);
         
 });
 
