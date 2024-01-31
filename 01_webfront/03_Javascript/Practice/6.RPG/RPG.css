@@ -1,0 +1,152 @@
+/* Default Setting */
+* {
+    /* Reset Outline and Decoration */
+    outline: none;
+    background: none;
+    text-decoration: none;
+    color: black;
+
+    /* Temporary Reference Border */
+    border: 1px solid rgba(80, 80, 80, 0.3);
+    box-sizing: border-box;
+
+    /* Reset Margin and Padding */
+    margin: 0;
+    padding: 0;
+}
+
+button:hover, a:hover {
+    /* Display Pointer if Hover */
+    cursor: pointer;
+}
+/* -------------------------------------------------- */
+h4 {
+    font-size: 20px;
+    padding: 10px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+#rpg-box {
+    display: flex;
+
+    padding: 10px;
+    width: 100%;
+    height: 500px;
+}
+
+#rpg-box > div {
+    flex-basis: 33.33%;
+
+    width: 33.33%;
+    height: 100%;
+}
+
+#rpg > div:nth-child(2) {
+    border-left: 1px solid black;
+    border-left: 1px solid black;
+}
+
+/* Comment */
+#character-box {
+    display: flex;
+    flex-direction: column;
+}
+
+#character-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#character-img > img {
+    width: 130px;
+}
+
+#character-stat {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#character-stat > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 2px;
+}
+
+#character-stat > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 60px;
+}
+
+#character-stat > div > div button {
+    width: 20px;
+    height: 20px;
+}
+
+#character-name {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    height: 20px;
+}
+
+/* Comment */
+#battle-log {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    font-size: 12px;
+}
+
+/* Comment */
+#store-box{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
