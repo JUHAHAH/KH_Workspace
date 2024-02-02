@@ -1,4 +1,4 @@
-/* Default Settings */
+/* #region Default Settings */
 * {
 	/* Reset Outline and Decoration */
 	outline: none;
@@ -14,13 +14,15 @@
 	margin: 0;
 	padding: 0;
 }
+
 button:hover,
 a:hover {
 	/* Display Pointer if Hover */
 	cursor: pointer;
 }
+/* #endregion */
 
-/* Main Template Values */
+/* #region Main Template Values */
 :root {
 	--main-color-base: rgba(0, 0, 0, 0.2);
 	--main-color-1: rgb(225, 25, 235);
@@ -39,3 +41,45 @@ section {
 	height: 100px;
 	background: var(--main-gradient);
 }
+/* #endregion */
+
+/* #region Header */
+
+
+
+
+
+
+
+
+
+
+
+/* #endregion */
+
+
+/* Body */
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+

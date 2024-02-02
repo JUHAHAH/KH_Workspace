@@ -10,7 +10,7 @@ public class VariableExample2 {
 		
 		// 변수 선언
 		// 카멜 표기법
-		
+
 		// Boolean
 		boolean booleanData; // 초기화 작업 {(자료형) (변수명) = (리터럴);}
 		booleanData = true;
@@ -19,16 +19,16 @@ public class VariableExample2 {
 		// Byte
 		byte byteNumber = 127; // -128~127 의 값만 허용(1byte)
 		System.out.println(byteNumber);
-		
+
 		// Short
 		short shortNumber = 32767;
-		
+
 		// Int(기본형)
 		int inNumber = 2147483647; // short, byte는 잘 사용되지 않음
 		
 		// Long
 		long longNumber = 10000000000L; // L 또는 l 사용해야지만 롱으로 인식, 아니면 int로 인식
-		
+
 		// Float
 		float floatNumber = 1.2345f; // F 또는 f 사용
 		
@@ -56,7 +56,8 @@ public class VariableExample2 {
 		
 		// 형변환
 		System.out.println(1 + 1.3);
-		
+
+
 		
 		
 	}

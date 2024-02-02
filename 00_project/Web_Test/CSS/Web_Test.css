@@ -1,0 +1,198 @@
+/* #region Default Settings */
+* {
+	/* Reset Outline and Decoration */
+	outline: none;
+	background: none;
+	text-decoration: none;
+	color: black;
+
+	/* Temporary Reference Border */
+	border: 0.01rem solid rgba(80, 80, 80, 0.2);
+	box-sizing: border-box;
+
+	/* Reset Margin and Padding */
+	margin: 0;
+	padding: 0;
+}
+
+button:hover,
+a:hover {
+	/* Display Pointer if Hover */
+	cursor: pointer;
+}
+/* #endregion */
+
+/* #region Main Template Values */
+:root {
+	--main-font-color: rgb(14, 14, 18);
+	--main-color-base: rgba(0, 0, 0, 0.2);
+	--main-color-1: rgb(225, 25, 235);
+	--main-color-2: rgb(100, 10, 255);
+	--main-color-3: rgb(35, 0, 130);
+	--main-gradient: linear-gradient(
+			40deg,
+			var(--main-color-1),
+			var(--main-color-base) 66%
+		),
+		linear-gradient(220deg, var(--main-color-2), var(--main-color-base) 66%),
+		linear-gradient(165deg, var(--main-color-3), var(--main-color-base) 66%);
+}
+
+section {
+
+}
+/* #endregion */
+
+
+
+
+
+
+/* #region Container */
+.container {
+}
+
+#account {
+	padding: 0.25rem;
+
+	font-size: 0.8rem;
+	text-align: right;
+}
+/* #endregion */
+
+
+
+
+
+
+
+/* #region Header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	position: sticky;
+	top: 0;
+
+	background: var(--main-gradient);
+}
+
+header > a {
+	display: inherit;
+	justify-content: inherit;
+	align-items: inherit;
+}
+
+header > a > * {
+	margin: 0.2rem;
+
+	width: 0.8rem;
+	height: 0.8rem;
+}
+
+
+
+#menu {
+	align-items: right;
+
+	width: 1rem;
+	height: 1rem;
+
+	background-color: red;
+}
+
+
+
+
+
+
+/* #endregion */
+
+
+
+
+
+
+
+
+
+
+/* #region Navigation */
+#nav {
+	visibility: collapse;
+
+	width: 0;
+	height: inherit;
+
+	position: absolute;
+	right: 0;
+	top: inherit;
+}
+
+/* #endregion */
+
+
+
+
+
+
+
+
+
+
+/* Main */
+main {
+	display: flex;
+
+	height: 100rem;
+}
+
+
+
+
+
+
+
+
+/* Footer */
+
+
+
+
+
+
+
+
+
+
+/* #region Media Screen Control */
+@media (min-width:320px) {
+	 /* smartphones, iPhone, portrait 480x320 phones */ 
+}
+
+@media (min-width:481px) {
+	 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+}
+
+@media (min-width:641px) {
+	 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+}
+
+@media (min-width:961px) {
+	 /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+}
+
+@media (min-width:1025px) {
+	 /* big landscape tablets, laptops, and desktops */ 
+}
+
+@media (min-width:1281px) {
+	 /* hi-res laptops and desktops */ 
+}
+/* #endregion */
+
+
+
+
+
