@@ -1,7 +1,8 @@
 // #region jQuery Methods
 $(function() {
+    // Expandable Navigation
     $('#menu').click(function (e) { 
-        const maxNavWidth = 5;
+        const maxNavWidth = 15;
         if($('#nav').width() < 0.01) {
 
             $('#nav').css('width', `${maxNavWidth}rem`);

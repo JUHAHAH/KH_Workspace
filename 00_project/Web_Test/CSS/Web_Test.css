@@ -5,6 +5,7 @@
 	background: none;
 	text-decoration: none;
 	color: black;
+	list-style: none;
 
 	/* Temporary Reference Border */
 	border: 0.01rem solid rgba(80, 80, 80, 0.2);
@@ -72,26 +73,27 @@ header {
 	justify-content: space-between;
 	align-items: center;
 
+	height: 10rem;
+
 	position: sticky;
 	top: 0;
 
-	background: var(--main-gradient);
+	background: transparent;
+	backdrop-filter: 5rem;
 }
 
-header > a {
+header > * {
 	display: inherit;
-	justify-content: inherit;
 	align-items: inherit;
 }
 
 header > a > * {
 	margin: 0.2rem;
 
+	position: relative;
 	width: 0.8rem;
 	height: 0.8rem;
 }
-
-
 
 #menu {
 	align-items: right;
@@ -121,13 +123,16 @@ header > a > * {
 /* #region Navigation */
 #nav {
 	visibility: collapse;
+	display: flex;
 
 	width: 0;
-	height: inherit;
+	height: 100%;
 
-	position: absolute;
+	position: fixed;
+	top: 10rem; /* Bottom of Header */
 	right: 0;
-	top: inherit;
+
+	transition: 0.3s;
 }
 
 /* #endregion */
@@ -146,8 +151,10 @@ main {
 	display: flex;
 
 	height: 100rem;
-}
+	width: 20rem;
 
+	background: var(--main-gradient);
+}
 
 
 
