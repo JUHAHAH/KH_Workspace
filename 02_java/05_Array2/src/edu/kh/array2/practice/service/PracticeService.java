@@ -84,15 +84,97 @@ public class PracticeService {
 		System.out.print("행의 값을 입력해주세요: ");
 		int inputR = sc.nextInt();
 
-		int[] col = new int[inputR];
+		char[][] arr = new char[inputR][];
+		char ch = 'a';
 
 		for (int i = 0; i < inputR; i++) {
 			System.out.print("열" + i + ": ");
-			col[i] = sc.nextInt();
+			int inputC = sc.nextInt();
+			arr[i] = new char[inputC];
+
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = ch;
+				ch++;
+			}
 			
+		}
+		System.out.println(Arrays.deepToString(arr));
+
+	}
+
+	public void practice7() {
+		String[] students = {"강건강", "남나나", "도대담", "류라라", "문미미", "박보배",
+				"송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하"};
+
+		String[][] arr1 = new String[3][2];
+		String[][] arr2 = new String[3][2];
+		int num = 0;
+
+		System.out.println("==1분단==");
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr1[i].length; j++) {
+				arr1[i][j] = students[num];
+				num++;
+				System.out.printf("%s ", arr1[i][j]);
+			}
+			System.out.print("\n");
+		}
+
+		System.out.println("==2분단==");
+		for (int i = 0; i < arr2.length; i++) {
+			for (int j = 0; j < arr2[i].length; j++) {
+				arr2[i][j] = students[num];
+				num++;
+				System.out.printf("%s ", arr2[i][j]);
+			}
+			System.out.print("\n");
 		}
 
 	}
+
+	public void practice8() {
+		String[] students = {"강건강", "남나나", "도대담", "류라라", "문미미", "박보배",
+				"송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하"};
+
+		String[][] arr1 = new String[3][2];
+		String[][] arr2 = new String[3][2];
+		int num = 0;
+
+		System.out.println("==1분단==");
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr1[i].length; j++) {
+				arr1[i][j] = students[num];
+				num++;
+				System.out.printf("%s ", arr1[i][j]);
+			}
+			System.out.print("\n");
+		}
+
+		System.out.println("==2분단==");
+		for (int i = 0; i < arr2.length; i++) {
+			for (int j = 0; j < arr2[i].length; j++) {
+				arr2[i][j] = students[num];
+				num++;
+				System.out.printf("%s ", arr2[i][j]);
+			}
+			System.out.print("\n");
+		}
+
+		System.out.println("=============================");
+		System.out.print("검색할 학생의 이름을 입력하세요: ");
+		String input = sc.next();
+
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr1[i].length; j++) {
+				if(arr1[i][j].equals(input)) {
+					System.out.println("" + i + j);
+				}
+			}
+		}
+
+	}
+
+
 
 
 
