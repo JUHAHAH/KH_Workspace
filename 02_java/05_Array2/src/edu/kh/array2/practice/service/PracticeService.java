@@ -174,6 +174,51 @@ public class PracticeService {
 
 	}
 
+	public void practice10() {
+		char[][] arr = new char[6][6];
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				arr[i][j] = ' ';
+			}
+		}
+
+		for (int i = 0; i < arr.length - 1; i++) {
+			arr[i+1][0] = (char)(i + '0');
+
+			for (int j = 0; j < arr[0].length - 1; j++) {
+				arr[0][i+1] = (char)(i + '0');
+			}
+		}
+
+		boolean flag = false;
+
+		while(!flag) {
+
+			System.out.print("행: ");
+			int inputR = sc.nextInt();
+
+			if(inputR == 99) {
+				flag = true;
+				System.out.println("종료");
+				break;
+			}
+
+			System.out.print("열: ");
+			int inputC = sc.nextInt();
+
+			arr[inputR + 1][inputC + 1] = 'X';
+
+			for (int i = 0; i < arr.length; i++) {
+				for (int j = 0; j < arr.length; j++) {
+					System.out.printf("%c ", arr[i][j]);
+
+				}
+				System.out.print("\n");
+			}
+		}
+	}
+
 
 
 
