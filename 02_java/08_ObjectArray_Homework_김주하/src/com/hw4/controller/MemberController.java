@@ -14,7 +14,7 @@ public class MemberController {
 			return 0;
 		}
 		
-		return mem.length + 1;
+		return mem.length;
 	}
 	
 	public Member[] getMem() {
@@ -27,6 +27,7 @@ public class MemberController {
 		}
 		
 		for (int i = 0; i < mem.length; i++) {
+			
 			if(mem[i].getUserId().equals(userId)) {
 				return mem[i];
 			}
@@ -37,22 +38,26 @@ public class MemberController {
 	public void insertMember(Member m) {
 		if(mem == null) {
 			mem = new Member[1];
-		}
-		
-		Member[] newMem = new Member[mem.length + 1];
-		
-		for (int i = 0; i < mem.length; i++) {
+			mem[0] = m;
+			memberCount = 1;
 			
-			if(i < memberCount) {
-				newMem[i] = mem[i];
+		} else {
+		
+			Member[] newMem = new Member[memberCount + 1];
+			
+			for (int i = 0; i < mem.length + 1; i++) {
 				
-			} else if(i >= memberCount) {
-				newMem[i] = m;
-				memberCount++;
-				
+				if(i < mem.length) {
+					newMem[i] = mem[i];
+					
+				} else if(i >= mem.length) {
+					newMem[i] = m;
+					memberCount++;
+					
+				}
 			}
+			mem = newMem;
 		}
-		mem = newMem;
 	}
 	
 	public Member searchMember(int menu, String search) {
@@ -93,35 +98,46 @@ public class MemberController {
 
 		switch(menu) {
 		case 1: 
-			for (int i = 0; i < memberCount; i++) {
-				if(mem[i] == m) {
-					mem[i].setUserPwd(update);
-				}
-			}
+			m.setUserPwd(update); break;
 			
 		case 2: 
-			for (int i = 0; i < memberCount; i++) {
-				if(mem[i] == m) {
-					mem[i].setName(update);
-				}
-			}
+			m.setName(update); break;
 			
 		case 3: 
-			for (int i = 0; i < memberCount; i++) {
-				if(mem[i] == m) {
-					mem[i].setUserId(update);
-				}
-			}
+			m.setEmail(update); break;
 			
-		case 9: return null;
-			
-		default :
-			return null;
+		default: System.out.println("유효한 값이 아닙니다");
 		}
 	}
 	
 	public void deleteMember(String userId) {
+		Member m = checkId(userId);
+		Member[] newMem = new Member[memberCount - 1];
+		boolean flag = false;
 		
+		for (int i = 0; i < mem.length - 1; i++) {
+			
+			if(mem[i] == m) {
+				flag = true;
+			}
+			
+			if(flag == true) {
+				newMem[i] = mem[i + 1];
+			
+			} else {
+				newMem[i] = mem[i];
+			}
+			
+		}
+		
+		if(newMem.length == 0) {
+			mem = null;
+			
+		} else {
+			mem = newMem;
+		
+		}
+		memberCount--;
 	}
 	
 	public Member[] sortIdAsc() {
