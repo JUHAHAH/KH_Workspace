@@ -1,6 +1,6 @@
-package edu.kh.collection.model.vo;
+package edu.kh.collection.pack1.model.vo;
 
-public class Student {
+public class Student implements Comparable<Student>{
 	// 필드
 	private String name;
 	private int age;
@@ -64,6 +64,10 @@ public class Student {
 	public String toString() {
 		return "Student [name=" + name + ", age=" + age + ", region=" + region + ", gender=" + gender + ", score="
 				+ score + "]";
+	}
+	
+	public int compareTo(Student other) {
+		return this.age - other.age; // 나이 기준 오름차 순 정렬
 	}
 
 

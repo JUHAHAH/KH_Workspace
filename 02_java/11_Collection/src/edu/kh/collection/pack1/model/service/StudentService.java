@@ -1,12 +1,14 @@
-package edu.kh.collection.model.service;
+package edu.kh.collection.pack1.model.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import edu.kh.collection.model.vo.Student;
+import edu.kh.collection.pack1.model.vo.Student;
 
 /**
  * 
@@ -74,6 +76,8 @@ public class StudentService {
 			System.out.println("4. 학생 정보 제거");
 			System.out.println("5. 이름으로 검색(일치)");
 			System.out.println("6. 이름으로 검색(포함)");
+			System.out.println("7. 나이순으로 정렬");
+			System.out.println("8. 이름 순으로 정렬");
 			System.out.println("0. 프로그램 종료");
 			
 			System.out.print("\n메뉴번호 선택: ");
@@ -326,7 +330,22 @@ public class StudentService {
 		
 		}
 		
+	}
+	
+	public void sortByAge() {
+		Collections.sort(studentList);
 		
+		for (Student student : studentList) {
+			System.out.println(student);
+		}
+		
+	}
+	
+	public void sortByName() {
+		// 이름에 따라 정렬하는 Comnparator 객체 생성
+		Comparator<Student> nameComparator = Comparator.comparing(Student::getName);
+		
+		Collections.sort(studentList);
 		
 	}
 	
