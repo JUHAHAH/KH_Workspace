@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="02_java/00_JavaBasic/src"/>
+	<classpathentry kind="src" path="02_java/01_Variable/src"/>
+	<classpathentry kind="src" path="02_java/02_Operator/src"/>
+	<classpathentry kind="src" path="02_java/03_Control/src"/>
+	<classpathentry kind="src" path="02_java/04_Array/src"/>
+	<classpathentry kind="src" path="02_java/05_Array2/src"/>
+	<classpathentry kind="src" path="02_java/06_OOP/src"/>
+	<classpathentry kind="src" path="02_java/07_ObjectArray_Homework_김주하/src"/>
+	<classpathentry kind="src" path="02_java/07_ObjectArray/src"/>
+	<classpathentry kind="src" path="02_java/08_Inherit_Homework_김주하/src"/>
+	<classpathentry kind="src" path="02_java/08_Inheritance/src"/>
+	<classpathentry kind="src" path="02_java/08_ObjectArray_Homework_김주하/src"/>
+	<classpathentry kind="src" path="02_java/10_Exception/src"/>
+	<classpathentry kind="src" path="02_java/11_collection_Homework_김주하/src"/>
+	<classpathentry kind="src" path="02_java/11_Collection/src"/>
+	<classpathentry kind="src" path="02_java/11_ToyFactory/src"/>
+	<classpathentry kind="src" path="02_java/12_IO/src"/>
+	<classpathentry kind="src" path="02_java/ToDoList/src"/>
+	<classpathentry kind="output" path="02_java/ToDoList/bin"/>
+</classpath>
