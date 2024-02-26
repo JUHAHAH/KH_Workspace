@@ -94,4 +94,58 @@ public class ToDoListDAOImpl implements ToDoListDAO {
 		return toDoList;
 	}
 
+	@Override
+	public ToDo toDoListDetailView(int index) {
+
+		if (index < toDoList.size()) {
+			return toDoList.get(index);
+
+		} else {
+			return null;
+		}
+
+	}
+
+	@Override
+	public int toDoAdd(ToDo toDo) throws Exception {
+
+		if (toDoList.add(toDo)) {
+			saveFile();
+			return (toDoList.size() - 1);
+
+		}
+
+		return -1;
+	}
+
+	@Override
+	public void saveFile() throws Exception {
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH));
+			oos.writeObject(toDoList);
+
+		} finally {
+
+			oos.close();
+
+		}
+
+	}
+
+	@Override
+	public boolean toDoComplete(int index) throws Exception {
+
+		if (index < 0 || index >= toDoList.size()) {
+			return false;
+		}
+
+		boolean complete = toDoList.get(index).isComplete();
+		toDoList.get(index).setComplete(!complete);
+
+		saveFile();
+
+		return true;
+
+	}
+
 }

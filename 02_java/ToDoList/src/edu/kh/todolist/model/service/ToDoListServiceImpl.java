@@ -63,4 +63,46 @@ public class ToDoListServiceImpl implements ToDoListService {
 		return formattedDateTime;
 	}
 
+	@Override
+	public String toDoListDetailView(int index) {
+		// DAO에 있는 ToDo 객체 받기
+		// 없으면 null 반환
+
+		ToDo toDo = dao.toDoListDetailView(index);
+
+		if (toDo == null) {
+			return null;
+		}
+
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("--------------------------------------------------------------------\n");
+		sb.append(String.format("제목: %s\n", (toDo.getTitle())));
+		sb.append(String.format("등록일: %s\n", dateFormat(toDo.getRegDate())));
+		sb.append(String.format("완료여부: %s\n", toDo.isComplete() ? "O" : "X"));
+		sb.append("\n[ 세부 내용 ]\n");
+		sb.append("--------------------------------------------------------------------\n");
+		sb.append(String.format("%s\n", toDo.getDetail()));
+
+		return sb.toString();
+
+	}
+
+	@Override
+	public int toDoAdd(String title, String content) throws Exception {
+
+		ToDo toDo = new ToDo(title, content, false, LocalDateTime.now());
+
+		int index = dao.toDoAdd(toDo);
+
+		return index;
+	}
+
+	@Override
+	public boolean toDoComplete(int index) throws Exception {
+
+		return dao.toDoComplete(index);
+
+	}
+
 }

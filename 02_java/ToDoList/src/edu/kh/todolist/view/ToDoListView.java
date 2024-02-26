@@ -52,15 +52,15 @@ public class ToDoListView {
 				case 1:
 					toDoListFullView();
 					break;
-//				case 2:
-//					toDoDetailView();
-//					break;
-//				case 3:
-//					toDoAdd();
-//					break;
-//				case 4:
-//					toDoComplete();
-//					break;
+				case 2:
+					toDoDetailView();
+					break;
+				case 3:
+					toDoAdd();
+					break;
+				case 4:
+					toDoComplete();
+					break;
 //				case 5:
 //					toDoUpdate();
 //					break;
@@ -84,6 +84,10 @@ public class ToDoListView {
 			} catch (IOException e) {
 
 				System.out.println("#### 입출력 관련 예외 발생");
+				e.printStackTrace();
+
+			} catch (Exception e) {
+				System.out.println("#### 에러 발생");
 				e.printStackTrace();
 
 			}
@@ -147,6 +151,86 @@ public class ToDoListView {
 			System.out.printf("[%3d]  %20s    (%s)    %s\n", i, regDate, completeYN, title);
 		}
 
+	}
+
+	public void toDoDetailView() throws IOException {
+		System.out.println("\n======[2. ToDo List Detail View]\n");
+
+		System.out.print("인덱스 번호 입력: ");
+		int index = Integer.parseInt(br.readLine());
+
+		String detail = service.toDoListDetailView(index);
+
+		if (detail == null) {
+			System.out.println("#### 해당 일정을 찾을 수 없습니다");
+
+		} else {
+			System.out.println(detail);
+
+		}
+
+	}
+
+	/**
+	 * 할일 추가
+	 *
+	 * @throws IOException
+	 */
+	public void toDoAdd() throws Exception {
+		System.out.println("\n======[3. ToDo Add]\n");
+		System.out.print("할일 제목 입력: ");
+		String title = br.readLine();
+
+		System.out.print("세부 내용 작성(!wp = 종료): ");
+		System.out.println("--------------------------------------------------------------------");
+		StringBuilder sb = new StringBuilder();
+
+		while (true) {
+			String content = br.readLine();
+			if (content.equals("!wq")) {
+
+				break;
+
+			} else {
+
+				sb.append(content);
+				sb.append("\n");
+			}
+
+		}
+		System.out.println("--------------------------------------------------------------------");
+
+		int index = service.toDoAdd(title, sb.toString());
+
+		if (index == -1) {
+			System.out.println("파일 추가가 실패하였습니다");
+			return;
+
+		} else {
+			System.out.printf("%d번째 인덱스에 저장했습니다", index);
+
+		}
+
+	}
+
+	/**
+	 * 할일 완료 여부 변경 메서드 O => X / X => O 인덱스 번호 입력
+	 */
+	public void toDoComplete() throws Exception {
+		System.out.println("\n======[4. ToDo Complete ]\n");
+
+		System.out.print("변경할 인덱스 번호 입력: ");
+		int index = Integer.parseInt(br.readLine());
+
+		boolean complete = service.toDoComplete(index);
+
+		if (complete) {
+			System.out.println("변경이 완료되었습니다");
+
+		} else {
+			System.out.println("#### 해당 인덱스를 변경할 수 없습니다");
+
+		}
 	}
 
 }

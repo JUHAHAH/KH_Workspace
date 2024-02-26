@@ -21,4 +21,25 @@ public interface ToDoListService {
 	 */
 	public abstract String dateFormat(LocalDateTime regDate);
 
+	public abstract String toDoListDetailView(int index);
+
+	/**
+	 * 할일 추가 서비스
+	 * 
+	 * @param title
+	 * @param content
+	 * @return
+	 * @throws Exception
+	 */
+	public abstract int toDoAdd(String title, String content) throws Exception;
+
+	/**
+	 * 할일 완료 여부 변경하기
+	 * 
+	 * @param index
+	 * @return 해당 인덱스 요소의 완료 여부 / 인덱스가 없으면 false
+	 * @throws Exception
+	 */
+	public abstract boolean toDoComplete(int index) throws Exception;
+
 }
