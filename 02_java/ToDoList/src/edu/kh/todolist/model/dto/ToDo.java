@@ -9,7 +9,6 @@ public class ToDo implements Serializable { // 스트림 입출력 위한 직렬
 	private String title; // 일정
 	private String detail; // 상세 일정
 	private boolean complete; // 완료 여부
-	// LocalDateTime = 날짜 시간을 나타냄
 	// LocalDateTime.now() = 현재 시간
 	private LocalDateTime regDate; // 등록 날짜
 	
