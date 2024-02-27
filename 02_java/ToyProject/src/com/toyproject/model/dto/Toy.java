@@ -2,23 +2,23 @@ package com.toyproject.model.dto;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Toy implements Serializable{
 	private String name;
 	private String id;
 	private boolean complete;
-	private HashMap<String, String> parts;
+	private Map<String, String> parts;
 	
 	public Toy() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Toy(String name, String id, boolean complete, HashMap<String, String> parts) {
+	public Toy(String name, String id, boolean complete, Map<String, String> parts) {
 		super();
 		this.name = name;
 		this.id = id;
-		this.complete = complete;
 		this.parts = parts;
 	}
 
@@ -46,17 +46,18 @@ public class Toy implements Serializable{
 		this.complete = complete;
 	}
 
-	public HashMap<String, String> getParts() {
+	public Map<String, String> getParts() {
 		return parts;
 	}
 
 	public void setParts(HashMap<String, String> parts) {
 		this.parts = parts;
 	}
+	
 
 	@Override
 	public String toString() {
-		return "Toy [name=" + name + ", id=" + id + ", complete=" + complete + "]";
+		return "TOY ID: " + id + " / Name: " + name;
 	}
 	
 	

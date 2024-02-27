@@ -8,6 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/00_JavaBasic/bin/edu/kh" />
       <excludeFolder url="file://$MODULE_DIR$/00_JavaBasic/bin/edu/kh/basic" />
       <excludeFolder url="file://$MODULE_DIR$/01_Variable/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/ToyProject" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
