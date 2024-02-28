@@ -42,17 +42,17 @@ public class ToyServiceImpl implements ToyService{
 		List<String> head = new ArrayList<String>();
 		List<String> body = new ArrayList<String>();
 		
-		head.add("( 'ㅅ' )");
-		head.add("( ^ㅈ^ )");
-		head.add("(<|><|>)");
-		head.add("[ ㅁㅁ ]");
-		head.add("( ~ ~ )");
+		head.add("( ◕ヮ◕ )");
+		head.add("( ͡° ͜ʖ ͡°)");
+		head.add("( ಠ益ಠ )");
+		head.add("(  ͡° ͜ °)");
+		head.add("(  °o• )");
 		
-		body.add("(  U   )");
-		body.add("(  ><  )");
-		body.add("[  Y   ]");
-		body.add(" \\ :: /");
-		body.add("(  **  )");
+		body.add("(  ❤  )");
+		body.add("(   ☆  )");
+		body.add("( ง    ง)");
+		body.add("[☞    ☞]");
+		body.add("(っ   ς)");
 		
 		List<List> preset = new ArrayList<List>();
 		preset.add(head);
@@ -104,7 +104,7 @@ public class ToyServiceImpl implements ToyService{
 		List<Toy> toyList = dao.load();
 		
 		for (Toy toy : toyList) {
-			if(toy.getName().equals(input)) {
+			if(toy.getId().equals(input)) {
 				return toy.getParts();
 			}
 		}
@@ -118,7 +118,7 @@ public class ToyServiceImpl implements ToyService{
 		List<Toy> toyList = dao.load();
 		
 		for (Toy toy : toyList) {
-			if(toy.getName().equals(input)) {
+			if(toy.getId().equals(input)) {
 				toyList.remove(toy);
 				
 				dao.save(toyList);
@@ -146,11 +146,11 @@ public class ToyServiceImpl implements ToyService{
 	}
 
 	@Override
-	public void updateName(String name, String nameChange) throws Exception {
+	public void updateName(String id, String nameChange) throws Exception {
 		List<Toy> toyList = dao.load();
 		
 		for (Toy toy : toyList) {
-			if(toy.getName().equals(name)) {
+			if(toy.getId().equals(id)) {
 				toy.setName(nameChange);
 			}
 		}
@@ -159,7 +159,7 @@ public class ToyServiceImpl implements ToyService{
 	}
 
 	@Override
-	public void updateAppearance(String name, String headChoice, String bodyChoice) throws Exception {
+	public void updateAppearance(String id, String headChoice, String bodyChoice) throws Exception {
 		List<Toy> toyList = dao.load();
 		
 		HashMap<String, String> parts = new HashMap<String, String>();
@@ -167,11 +167,24 @@ public class ToyServiceImpl implements ToyService{
 		parts.put("body", bodyChoice);
 		
 		for (Toy toy : toyList) {
-			if(toy.getName().equals(name)) {
+			if(toy.getId().equals(id)) {
 				toy.setParts(parts);;
 			}
 		}
 		
+	}
+
+	@Override
+	public Object checkId(String input) throws Exception {
+		List<Toy> toyList = dao.load();
+		
+		for (Toy toy : toyList) {
+			if(toy.getId().equals(input)) {
+				return toy;
+			}
+		}
+		
+		return null;
 	}
 	
 	

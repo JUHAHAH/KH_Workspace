@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" modified="2024-02-28T01:57:30.170Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="2l0OdcOnHr28wMgOPZAF" version="23.1.7" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1687" dy="878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="6us-ufTQNBUQRDEBngvf-9" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;com.toyproject.model.dto.Toy&lt;/font&gt;&lt;span style=&quot;background-color:#191d1f;padding:0px 0px 0px 2px;&quot;&gt;&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="50" y="665" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="6us-ufTQNBUQRDEBngvf-10" value="- name : String&lt;div&gt;- id: String&lt;/div&gt;&lt;div&gt;- complete: boolean&lt;/div&gt;&lt;div&gt;- parts: Map&amp;lt;String, String&amp;gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="6us-ufTQNBUQRDEBngvf-9" vertex="1">
+          <mxGeometry y="26" width="160" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="6us-ufTQNBUQRDEBngvf-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="6us-ufTQNBUQRDEBngvf-9" vertex="1">
+          <mxGeometry y="90" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6us-ufTQNBUQRDEBngvf-12" value="+ Toy()&lt;br&gt;+ getters() / setters()&lt;br&gt;+ toString()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="6us-ufTQNBUQRDEBngvf-9" vertex="1">
+          <mxGeometry y="98" width="160" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="6us-ufTQNBUQRDEBngvf-13" value="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px; font-weight: normal;&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;com.toyproject.model.service.ToyService&lt;/font&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="240" y="460" width="290" height="220" as="geometry">
+            <mxRectangle x="210" y="60" width="240" height="80" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6us-ufTQNBUQRDEBngvf-16" value="&lt;div&gt;+ load(): List&amp;lt;Toy&amp;gt;&lt;/div&gt;&lt;div&gt;+ save(List&amp;lt;Toy&amp;gt;): void&lt;/div&gt;&lt;div&gt;&lt;/div&gt;+ preset(): List&amp;lt;List&amp;gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;+ create(String, String, String): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ generateID(): String&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;+ viewToy(String): Map&amp;lt;String, String&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;removeToy(String): boolean&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;+ check(String): Toy&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;/span&gt;updateName(String, String): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;+ updateAppearance(String, String, String): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;+ Object checkId(String): Object&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="6us-ufTQNBUQRDEBngvf-13" vertex="1">
+          <mxGeometry y="40" width="290" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="6us-ufTQNBUQRDEBngvf-21" value="com.toyproject.model.service.ToyServiceImpl" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontSize=10;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="550" y="544" width="230" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="6us-ufTQNBUQRDEBngvf-24" value="+ ToyServiceImpl()&lt;span style=&quot;background-color:#191d1f;padding:0px 0px 0px 2px;&quot;&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="6us-ufTQNBUQRDEBngvf-21" vertex="1">
+          <mxGeometry y="26" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6us-ufTQNBUQRDEBngvf-25" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=-0.006;exitY=0.159;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.011;entryY=0.292;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="6us-ufTQNBUQRDEBngvf-21" target="6us-ufTQNBUQRDEBngvf-16" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="514" y="600" as="sourcePoint" />
+            <mxPoint x="604" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-7" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;/span&gt;com.toyproject.model.dao.ToyDAO&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="700" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-10" value="&lt;div&gt;+ load(): List&amp;lt;Toy&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;+ &lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;save(List&amp;lt;Toy&amp;gt; toyList): void&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="E_DPib6Z1ZFssLRws0oH-7">
+          <mxGeometry y="40" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-11" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;com.toyproject.model.dao.ToyDAOImpl&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="550" y="714" width="195" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-14" value="+ ToyDAOImpl()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="E_DPib6Z1ZFssLRws0oH-11">
+          <mxGeometry y="26" width="195" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-16" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=-0.021;exitY=0.241;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.015;entryY=0.336;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="E_DPib6Z1ZFssLRws0oH-11" target="E_DPib6Z1ZFssLRws0oH-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="344" y="690" as="sourcePoint" />
+            <mxPoint x="504" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-19" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;com.toyproject.run&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="440" width="160" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-22" value="+&amp;nbsp;main(String[] args): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="E_DPib6Z1ZFssLRws0oH-19">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-23" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;com.toyproject.view.ToyView&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="510" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="E_DPib6Z1ZFssLRws0oH-26" value="+ toyView(): void&lt;div&gt;+ selectMenu(int): void&lt;/div&gt;&lt;div&gt;+ updateToy(): void&lt;/div&gt;&lt;div&gt;+ listToy(): void&lt;/div&gt;&lt;div&gt;+ createToy(): void&lt;/div&gt;&lt;div&gt;+ viewToy(): void&lt;/div&gt;&lt;div&gt;+ removeToy(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="E_DPib6Z1ZFssLRws0oH-23">
+          <mxGeometry y="26" width="160" height="114" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

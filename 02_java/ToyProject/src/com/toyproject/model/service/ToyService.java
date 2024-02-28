@@ -22,8 +22,10 @@ public interface ToyService {
 
 	public Toy check(String input) throws Exception;
 
-	public void updateName(String name, String nameChange) throws Exception;
+	public void updateName(String id, String nameChange) throws Exception;
 
-	public void updateAppearance(String name, String headChoice, String bodyChoice) throws Exception;
+	public void updateAppearance(String id, String headChoice, String bodyChoice) throws Exception;
+
+	public Object checkId(String input) throws Exception;
 
 }

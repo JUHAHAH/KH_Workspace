@@ -71,10 +71,10 @@ public class ToyView {
 		System.out.printf("%-2s %-40s %s\n", "||", "2. Update Appearance", "||");
 		System.out.println("*============================================*\n");
 		
-		System.out.print("\n[변경할 장난감의 이름을 입력하세요] : ");
-		String name = br.readLine();
+		System.out.print("\n[변경할 장난감의 ID를 입력하세요] : ");
+		String id = br.readLine();
 		
-		if(serv.check(name) != null) {
+		if(serv.checkId(id) != null) {
 			List<Toy> toyList = serv.load();
 			
 			System.out.print("\nInput Menu Number: ");
@@ -85,7 +85,7 @@ public class ToyView {
 				System.out.print("[어떤 이름으로 하시겠습니까?] : ");
 				String nameChange = br.readLine();
 				
-				serv.updateName(name, nameChange); 
+				serv.updateName(id, nameChange); 
 				System.out.println("[이름 변경 완료]");
 				break;
 				
@@ -122,7 +122,7 @@ public class ToyView {
 				int inBody = Integer.parseInt(br.readLine());
 				String bodyChoice = body.get(inBody);
 				
-				serv.updateAppearance(name, headChoice, bodyChoice); 
+				serv.updateAppearance(id, headChoice, bodyChoice); 
 				
 				System.out.println("[외향 변경 완료]");
 				break;
@@ -207,7 +207,7 @@ public class ToyView {
 		
 		List<Toy> toyList = serv.load();
 		
-		System.out.print("[확인할 장난감의 이름을 입력하세요] : ");
+		System.out.print("[확인할 장난감의 ID를 입력하세요] : ");
 		String input = br.readLine();
 		
 		if(serv.viewToy(input) != null) {
@@ -232,10 +232,10 @@ public class ToyView {
 		
 		List<Toy> toyList = serv.load();
 		
-		System.out.print("[제거할 장난감의 이름을 입력하세요] : ");
+		System.out.print("[제거할 장난감의 ID를 입력하세요] : ");
 		String input = br.readLine();
 		
-		if(serv.check(input) != null) {
+		if(serv.checkId(input) != null) {
 			System.out.println("[정말로 제거하시겠습니까?(Y/N)] :");
 			char yN = br.readLine().charAt(0);
 			
@@ -247,8 +247,10 @@ public class ToyView {
 			
 		} else {
 			System.out.println("[해당하는 장난감이 존재하지 않습니다]");
+			
 		}
 	}
+	
 	
 	
 	
