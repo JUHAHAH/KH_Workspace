@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- Main용 SQL -->
+	
+	<entry key="selectMemberList">
+		SELECT MEMBER_NM, MEMBER_ID, MEMBER_GENDER
+		FROM "MEMBER"
+	</entry>
+	
+	<entry key="updateMember">
+		UPDATE "MEMBER"
+		SET MEMBER_NM = ?,  MEMBER_GENDER = ?
+		WHERE MEMBER_ID = ?
+	</entry>
+	
+</properties>
