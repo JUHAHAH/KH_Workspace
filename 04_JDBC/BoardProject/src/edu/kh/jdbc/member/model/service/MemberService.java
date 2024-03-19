@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static edu.kh.jdbc.common.JDBCTemplate.*;
 import edu.kh.jdbc.member.model.dao.MemberDAO;
@@ -45,4 +46,64 @@ public class MemberService {
 		
 		return result;
 	}
+
+	public int updatePassword(String current, String newPw, int memberNo) throws SQLException {
+		Connection conn = getConnection();
+		
+		int result = dao.updatePassword(conn, current, newPw, memberNo);
+		
+		if (result>0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	public String createSecurityCode() {
+		StringBuffer code = new StringBuffer();
+		
+		Random ran = new Random(); // 난수 생성 객체
+		
+		for (int i = 0; i < 6; i++) {
+			int x = ran.nextInt(10); // 0 이상 10 미만의 정수
+			code.append(x);
+			
+		}
+		
+		
+		return code.toString();
+		
+	}
+
+	public int unRegisterMember(String memberPw, int memberNo) throws Exception {
+		Connection conn = getConnection();
+		
+		int result = dao.unRegisterMember(conn, memberPw, memberNo);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
