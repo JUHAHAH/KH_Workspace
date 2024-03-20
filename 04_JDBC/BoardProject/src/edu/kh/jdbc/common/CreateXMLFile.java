@@ -4,11 +4,9 @@ import java.io.FileOutputStream;
 import java.util.Properties;
 import java.util.Scanner;
 
-import edu.kh.jdbc.main.model.service.MainService;
-
 public class CreateXMLFile {
-public static void main(String[] args) {
-		
+	public static void main(String[] args) {
+			
 		// XML(eXtensible Markup Language) : 단순화된 데이터 기술 형식 
 		
 		// XML에 저장되는 데이터 형식 Key : Value 형식(Map)이다.
