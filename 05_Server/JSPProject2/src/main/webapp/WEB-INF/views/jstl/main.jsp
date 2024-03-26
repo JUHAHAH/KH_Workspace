@@ -133,6 +133,34 @@
 	<%-- /jstl/loop 요청 처리용 Controller 필요: JSTLLoopController --%>
 	
 	
+	<hr><hr><hr>
+	
+	<%-- 현재경로: localhost:8080/jstl/main --%>
+	<%-- 목표경로: localhost:8080/jstl/student/selectAll --%>
+	<a href="student/selectAll">학생전체 조회하기</a>
+	<%-- student/selectAll --%>
+	
+	<!-- -------------------------------------- -->
+	
+	
+	
+	<!-- 
+	상대경로로 작성
+	현재 경로: http://localhost:8080/jstl/main
+	목표 경로: http://localhost:8080/jstl/student/selectArch
+	-->
+	<a href="student/selectArch">workbook에서 건축학과만 조회</a> <!-- 건축학과만 조회 -->
+	
+	<!-- 
+	상대경로로 작성
+	현재 경로: http://localhost:8080/jstl/main
+	목표 경로: http://localhost:8080/jstl/student/selectOne
+	-->
+	<form action="/student/selectOne" method="post">
+		<input type="text" name="deptName"> <!-- 작성된학과만 조회 -->
+		<button>찾기</button>
+	</form>
+	<%-- SelectOneController --%>
 	
 
 
