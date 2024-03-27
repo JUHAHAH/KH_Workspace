@@ -27,4 +27,17 @@ public class MemberService {
 	
 	}
 
+
+	public int signup(Member member) throws SQLException {
+		Connection conn = getConnection();
+		
+		int result = dao.signup(conn, member);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		return result;
+		
+	}
+
 }

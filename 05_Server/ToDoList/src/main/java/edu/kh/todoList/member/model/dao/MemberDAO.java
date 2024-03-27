@@ -73,5 +73,27 @@ public class MemberDAO {
 		return loginMember;
 		
 	}
+
+	public int signup(Connection conn, Member member) throws SQLException {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("signup");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, member.getMemberId());
+			pstmt.setString(2, member.getMemberPw());
+			pstmt.setString(3, member.getMemberNickName());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+			
+		}
+		return result;
+		
+	}
 	
 }

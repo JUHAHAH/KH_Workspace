@@ -1,6 +1,7 @@
 package edu.kh.todoList.todo.model.service;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import static edu.kh.todoList.common.JDBCTemplate.*;
@@ -19,6 +20,71 @@ public class TodoService {
 		
 		return todoList; 
 	}
-	
-	
+
+	public int insert(String title, String memo, int memberNo) throws Exception{
+		Connection conn = getConnection();
+		
+		int result = dao.insert(conn, title, memo, memberNo);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	public int delete(String todoNo) throws SQLException {
+		Connection conn = getConnection();
+		
+		int result = dao.delete(conn, todoNo);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	public Todo selectOne(String todoNo, int memberNo) throws Exception {
+		Connection conn = getConnection();
+		
+		Todo todo = dao.selectOne(conn, todoNo, memberNo);
+		
+		close(conn);
+		
+		return todo;
+	}
+
+	public int update(String title, String memo, int memberNo, String todoNo) throws Exception{
+		Connection conn = getConnection();
+		
+		int result = dao.update(conn, title, memo, memberNo, todoNo);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
