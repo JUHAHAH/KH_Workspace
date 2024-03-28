@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>items.xml</comment>
+	
+	<entry key="selectAll">
+		SELECT ITEM_NO, ITEM_NAME, ITEM_INFO, ITEM_PRICE, ITEM_IMAGE, UPLOAD_DATE, MEMBER_NO
+		FROM ITEMS
+	</entry>
+	
+	<entry key="purchase">
+		UPDATE MEMBER SET 
+		MEMBER_ASSET = (MEMBER_ASSET - (SELECT ITEM_PRICE FROM ITEMS WHERE ITEM_NO = ?))
+		WHERE MEMBER_NO = ?
+	</entry>
+	 
+</properties>

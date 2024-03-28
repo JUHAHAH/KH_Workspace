@@ -5,24 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="/resources/css/main.css" rel="stylesheet">
 </head>
 <body>
 	<jsp:include page="/shared/header.jsp"></jsp:include>
-	
-	<form action="/login" method="post">
-		<div>
-			<p>아이디</p>
-			<input type="text" name="inputId">
-		</div>
-		<div>
-			<p>패스워드</p>
-			<input type="password" name="inputPw">
-		</div>
-		<button>로그인</button>
+	<form action="/updateProfile" method="post">
+		아이디: <input name="inputId" value="${ sessionScope.loginMember.memberId }"> <br>
+		이름: <input name="inputName" value="${ sessionScope.loginMember.memberName }"> <br>
+		
+		<button>정보 수정</button>
 	</form>
-	<a href="/signup">회원가입</a>
-	
 	<jsp:include page="/shared/footer.jsp"></jsp:include>
 </body>
 </html>

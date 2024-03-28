@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +9,23 @@
 </head>
 <body>
 	<jsp:include page="/shared/header.jsp"></jsp:include>
-	<main>	
-			
-		<jsp:include page="/WEB-INF/views/items.jsp"></jsp:include>
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.86/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/ni0gfvSDdrB8oVus/scene.splinecode"></spline-viewer>
-	</main>
+	
+	<form action="/signup" method="post">
+		<div>
+			<p>아이디</p>
+			<input type="text" name="inputId" required>
+		</div>
+		<div>
+			<p>이름</p>
+			<input type="text" name="inputName" required>
+		</div>
+		<div>
+			<p>패스워드</p>
+			<input type="password" name="inputPw" required>
+		</div>
+		<button>회원가입</button>
+	</form>
+	
 	<jsp:include page="/shared/footer.jsp"></jsp:include>
 </body>
 </html>

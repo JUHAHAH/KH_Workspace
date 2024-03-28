@@ -8,8 +8,11 @@
 <link href="/resources/css/main.css" rel="stylesheet">
 </head>
 <body>
-<footer>
-	this is footer
-</footer>
+	<jsp:include page="/shared/header.jsp"></jsp:include>
+	
+	
+	
+	
+	<jsp:include page="/shared/footer.jsp"></jsp:include>
 </body>
 </html>
