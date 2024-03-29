@@ -71,8 +71,8 @@
 	<c:if test="${ not empty sessionScope.message }">
 		<script type="text/javascript">
 			// EL/JSTL 구문이 JS보다 먼저 해석되는데
-			// 문자열이 들어가 있는 데이터의 경우 '' 추가해 String 형태로
-			alert('${message}');			
+			// ;문자열이 들어가 있는 데이터의 경우 '' 추가해 String 형태로
+			alert('${message}')			
 		</script>
 	</c:if>
 	

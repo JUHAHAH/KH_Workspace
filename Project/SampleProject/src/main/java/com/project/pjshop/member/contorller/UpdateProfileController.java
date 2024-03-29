@@ -45,7 +45,8 @@ public class UpdateProfileController extends HttpServlet{
 				resp.sendRedirect("/profile");
 				
 			} else {
-				System.out.println("실패!");
+				session.setAttribute("message", "정보 수정 실패");
+				resp.sendRedirect("/");
 				
 			}
 			

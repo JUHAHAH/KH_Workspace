@@ -9,10 +9,13 @@
 </head>
 <body>
 	<jsp:include page="/shared/header.jsp"></jsp:include>
+	<main>
 	
 	
 	
 	
+	
+	</main>
 	<jsp:include page="/shared/footer.jsp"></jsp:include>
 </body>
 </html>

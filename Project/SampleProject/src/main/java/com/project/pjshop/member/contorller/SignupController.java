@@ -36,7 +36,8 @@ public class SignupController extends HttpServlet{
 				resp.sendRedirect("/login");
 				
 			} else {
-				
+				session.setAttribute("message", "회원가입 실패");
+				resp.sendRedirect("/");
 			}
 			
 		} catch (Exception e) {

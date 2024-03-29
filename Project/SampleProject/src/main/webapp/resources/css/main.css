@@ -1,18 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+* {
+  box-sizing: border-box;
+  color: rgb(55, 58, 62);
+  margin: 0;
+  font-family: 'EF_jejudoldam';
+}
+
+@font-face {
+  font-family: 'EF_jejudoldam';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+   transition: 0.1s;
+}
+
+a:hover {
+  color: rgb(66, 64, 60);
+	
+}
+
+.game{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%
+}
+
+.items{
+	display: flex;
+	flex-direction: column;
+}
+
+.monster {
+  width: 400px;
+  height: 400px;
+}
+
+.monster > * {
+  max-width: 100%;
+}
+button {
+  background-color: transparent;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  color: rgb(66, 64, 60);
+	
+}
+
+
+body {
+	margin: 0;
+   background-image: url('../images/main.jpg');
+  background-size: cover;
+}
+
+main {
+	min-height: 800px;
+	flex-direction: column;
+	font-size: 20px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login {
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+}
+
+.login > button {
+	font-size: 20px;
+	color: black;
+	
+}
 
 header {
-  font-family: 'Abril Fatface', serif;
+  font-size: 26px;
+  position: top;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url('../images/header.png');
+  background-size: contain;
+  height: 90px;
+}
 
+header > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  padding-top: 18px;
+  padding-right: 20px;
+}
+
+header > div > div {
+  display: flex;
+}
+header > div > div > * {
+  padding-left: 8px;
+}
+header > div > div > a {
+  padding-left: 10px;
+}
+
+.profile {
+	width: 100%;
+	font-size: 24px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile > * {
+	margin: 10px
+}
+
+footer {
+	display: flex;
+	color: black;
+	 background-image: url('../images/footer.png');
+  background-size: cover;
+	justify-content: center;
+	padding-botton: 16px;
+	align-items: center;
+	height: 80px;
 }
 
 .itemFrame {
-  border: solid 2px black;
+	margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
 }
 
 .itemFrame > * {
@@ -29,8 +163,8 @@ header {
   display: flex;
   object-fit: cover;
   border-radius: 50%;
-  height: 240px;
-  width: 240px;
+  height: 160px;
+  width: 160px;
   overflow: hidden;
+  margin: 10px
 }
-

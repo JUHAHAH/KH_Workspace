@@ -9,8 +9,8 @@
 </head>
 <body>
 	<jsp:include page="/shared/header.jsp"></jsp:include>
-	
-	<form action="/login" method="post">
+	<main>
+	<form class="login" action="/login" method="post">
 		<div>
 			<p>아이디</p>
 			<input type="text" name="inputId">
@@ -22,7 +22,7 @@
 		<button>로그인</button>
 	</form>
 	<a href="/signup">회원가입</a>
-	
+	</main>
 	<jsp:include page="/shared/footer.jsp"></jsp:include>
 </body>
 </html>

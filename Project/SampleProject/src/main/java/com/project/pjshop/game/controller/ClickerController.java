@@ -1,11 +1,8 @@
-package com.project.pjshop.member.contorller;
+package com.project.pjshop.game.controller;
 
 import java.io.IOException;
-import java.util.List;
 
-import com.project.pjshop.item.model.service.ItemService;
-import com.project.pjshop.member.model.service.MemberService;
-import com.project.pjshop.model.dto.Items;
+import com.project.pjshop.game.model.service.GameService;
 import com.project.pjshop.model.dto.Member;
 
 import jakarta.servlet.ServletException;
@@ -15,31 +12,36 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/delete")
-public class DeleteController extends HttpServlet{
+@WebServlet("/clicker")
+public class ClickerController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		MemberService service = new MemberService();
+		GameService service = new GameService();
 		
 		HttpSession session = req.getSession();
+		
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		
 		try {
-			int result = service.delete(loginMember.getMemberNo());
+			int result = service.loot(loginMember.getMemberNo());
 			
 			if(result > 0) {
-				session.invalidate();
-				
+				loginMember.setMemberAsset(loginMember.getMemberAsset() + 100);
+				session.setAttribute("loginMember", loginMember);
 				resp.sendRedirect("/");
-				
+			
 			} else {
-				session.setAttribute("message", "실패?");
-				resp.sendRedirect("/");
+				session.setAttribute("message", "실패");
+				resp.sendRedirect(req.getHeader("referer"));
+				
 			}
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+
+		
 		}
+		
+		
 		
 	}
 }

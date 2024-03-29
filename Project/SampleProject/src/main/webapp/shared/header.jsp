@@ -9,23 +9,27 @@
 <link href="/resources/css/main.css" rel="stylesheet">
 </head>
 <body>
-<header style="position: top; position: fixed; width: 100%;">
-	<div style="display: flex; justify-content: space-between;">
-		<a href="/" style="display: flex;">
+<header>
+	<div >
+		<a href="/">
 			PJ Shop
 		</a>
-		<div style="display: flex; padding-right: 20px">
+		<div>
 			<c:choose>
 				<c:when test="${ empty sessionScope.loginMember}">
 					<a href="/login">login</a>
 				</c:when>
 				<c:otherwise>
+					<div>
+                    	잔액:
+               		</div> 
+               		<div>${ sessionScope.loginMember.memberAsset }원</div>
 					<a href="/profile">${ sessionScope.loginMember.memberName }</a>
 				</c:otherwise>
 			</c:choose>
 		</div>
 	</div>
 </header>
-<div style="height: 30px; width: 100%"></div>
+<div style="height: 100px; width: 100%"></div>
 </body>
 </html>

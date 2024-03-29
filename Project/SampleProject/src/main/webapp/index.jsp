@@ -10,12 +10,28 @@
 </head>
 <body>
 	<jsp:include page="/shared/header.jsp"></jsp:include>
-	<main>	
-			
-		<jsp:include page="/WEB-INF/views/items.jsp"></jsp:include>
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.86/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/ni0gfvSDdrB8oVus/scene.splinecode"></spline-viewer>
+	<main>
+		<c:choose>
+			<c:when test="${ empty sessionScope.loginMember}">
+				먼저 로그인을 해주세요
+			</c:when>
+			<c:otherwise>
+				<div class="game">
+					<jsp:include page="/shared/clicker.jsp"></jsp:include>
+					<jsp:include page="/WEB-INF/views/items.jsp"></jsp:include>
+				</div>
+			</c:otherwise>
+	</c:choose>
 	</main>
+	
+	<c:if test="${ not empty sessionScope.message }">
+		<script type="text/javascript">
+			alert('${message}');
+		</script>
+	</c:if>
+	
+	<c:remove var="message" scope="session"/>
+	
 	<jsp:include page="/shared/footer.jsp"></jsp:include>
 </body>
 </html>

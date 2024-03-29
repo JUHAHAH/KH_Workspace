@@ -30,12 +30,16 @@ public class PurchaseController extends HttpServlet{
 			
 			try {
 				int result = service.purchase(member.getMemberNo(), itemNo);
+				member.setMemberAsset(member.getMemberAsset() - itemPrice);
+				session.setAttribute("loginMember", member);
+				
 				
 				if(result > 0) {
 					resp.sendRedirect("/");
 				
 				} else {
-					System.out.println("안되는데요");
+					session.setAttribute("message", "실패?");
+					resp.sendRedirect("/");
 					
 				}
 				
@@ -44,7 +48,8 @@ public class PurchaseController extends HttpServlet{
 				
 			}
 		} else {
-			System.out.println("잔액이 부족합니다");
+			session.setAttribute("message", "잔액이 부족합니다");
+			resp.sendRedirect("/");
 			
 		}
 	}

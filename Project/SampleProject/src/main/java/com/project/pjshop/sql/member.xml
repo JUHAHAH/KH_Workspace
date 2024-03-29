@@ -12,7 +12,7 @@
 	
 	<entry key="signup">
 		INSERT INTO MEMBER 
-		VALUES(DEFAULT, ?, ?, ?, 10000, DEFAULT )
+		VALUES(DEFAULT, ?, ?, ?, DEFAULT, DEFAULT )
 	</entry>
 	
 	<entry key="update">

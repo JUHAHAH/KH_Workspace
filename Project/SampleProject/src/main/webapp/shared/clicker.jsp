@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="clicker">
-		<img alt="moneymaker" src="https://cdn.vox-cdn.com/thumbor/L0KSVDlIzGEXnP-kS3BLJ-5BttA=/225x0:1575x900/920x613/filters:focal(225x0:1575x900):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/46040686/button.0.0.jpg">
-	</a>	
+	<form action="/clicker" method="get">
+		<button class="monster">
+			클릭하여 돈을 벌자
+			<img src="../resources/images/monster.png" alt="" style="background-color: transparent" />
+		</button>
+	</form>
 </body>
 </html>
