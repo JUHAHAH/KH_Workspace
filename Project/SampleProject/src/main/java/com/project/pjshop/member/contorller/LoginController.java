@@ -50,7 +50,8 @@ public class LoginController extends HttpServlet{
 				resp.sendRedirect("/");
 				
 			} else {
-				
+				session.setAttribute("message", "실패?");
+				resp.sendRedirect("/");
 			}
 			
 		} catch (Exception e) {
