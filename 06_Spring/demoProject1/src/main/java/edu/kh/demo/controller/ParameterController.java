@@ -1,11 +1,16 @@
 package edu.kh.demo.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.kh.demo.model.dto.MemberDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
@@ -78,4 +83,40 @@ public class ParameterController {
 
 		return "redirect:/param/main";
 	}
+
+	/*-
+	 * 3. @RequestParam 여러개 파라미터
+	 * 
+	 * String[]
+	 * List<자료형>
+	 * Map<String, Object>
+	 * 
+	 * required 속성은 사용 가능하나,
+	 * defaultValue 속성은 사용 불가
+	 */
+	@PostMapping("test3")
+	public String paramTest3(@RequestParam(value = "color", required = false) String[] colorArr,
+			@RequestParam(value = "fruit", required = false) List<String> fruitList,
+			@RequestParam Map<String, Object> paramMap) {
+		log.debug("" + colorArr);
+		log.debug("" + fruitList);
+		log.debug("" + paramMap);
+
+		return "redirect:/param/main";
+	}
+
+	/*-
+	 * 4. @ModelAttribute를 이용한 파라미터 얻어오기
+	 * DTO와 같이 사용하는 어노테이션
+	 * 
+	 * 전달받은 파라미터의 name 속성값이 같이 사용되는  dto와 동일하념 자동으로 setter 호출해서 값을 세팅
+	 * @ModelAttribute에 세팅된 객체를 커맨드 객체라고 한다
+	 */
+	@PostMapping("test4")
+	public String paramTest4(@ModelAttribute MemberDTO inputMember) {
+		log.debug(inputMember.toString());
+
+		return "redirect:/param/main";
+	}
+
 }
