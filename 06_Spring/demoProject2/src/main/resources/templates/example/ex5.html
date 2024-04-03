@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>타임리프 예제 5</h1>
+    <pre>
+    script 태그에 작성하는 속성
+    js에 알맞은 타입으로 변환 후 사용
+</pre
+    >
+    <h3 id="message"></h3>
+    <h3 id="num"></h3>
+
+    <script th:inline="javascript">
+      // JS inline - Natural Script
+      // 스크립트 내부에서 타임립프 변수나 연산 사용 가능
+
+      // HTML 독립 실행시 오류 발생하지 않게 함
+      // HTML 컴파일 오류도 해결
+
+      const message = /*[[${message}]]*/ 'message값';
+      const num1 = /*[[${num}]]*/ 100;
+
+      document.querySelector('#message').innerText = message;
+      document.querySelector('#num').innerText = num1;
+    </script>
+  </body>
+</html>
