@@ -16,8 +16,7 @@
 	WHERE COMPLETE = 'Y'
 </select>
 
-<insert id="addTodo" parameterType="Todo">
-	INSERT INTO TB_TODO
-	VALUES(SEQ_TODO_NO.NEXTVAL, #{todoTitle}, #{todoContent}, DEFAULT, DEFAULT)
+<insert id="addTodo">
+
 </insert>
 </mapper>

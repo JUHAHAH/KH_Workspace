@@ -35,6 +35,7 @@ public class DBConfig {
 		return dataSource;
 	}
 
+	@Bean
 	public SqlSessionFactory sessionFactory(DataSource dataSource) throws Exception {
 
 		SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
