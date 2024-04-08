@@ -1,5 +1,6 @@
 package edu.kh.todo.model.service;
 
+import java.util.List;
 import java.util.Map;
 
 import edu.kh.todo.model.dto.Todo;
@@ -22,4 +23,15 @@ public interface TodoService {
 	int todoUpdate(Todo todo);
 
 	int todoDelete(int todoNo);
+
+	/**
+	 * 전체 할 일 개수 조회(ajax)
+	 * 
+	 * @return count
+	 */
+	int getTotalCount();
+
+	int getCompleteCount();
+
+	List<Todo> selectList();
 }
