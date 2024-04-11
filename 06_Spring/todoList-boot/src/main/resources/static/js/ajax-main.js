@@ -16,6 +16,9 @@ const popupClose = document.querySelector('#popupClose');
 const deleteBtn = document.querySelector('#deleteBtn');
 const updateBtn = document.querySelector('#updateBtn');
 const changeComplete = document.querySelector('#changeComplete');
+const updateLayer = document.querySelector('#updateLayer');
+const updateContent = document.querySelector('#updateContent');
+const updateTitle = document.querySelector('#updateTitle');
 
 function getTotalCount() {
   // fetch API 코드 작성 -> BackEnd == 자바에서 얻어옴
@@ -167,6 +170,41 @@ deleteBtn.addEventListener('click', () => {
         alert('삭제 실패');
       }
     });
+});
+
+changeComplete.addEventListener('click', () => {
+  const todoNo = popupTodoNo.innerText;
+  const complete = popupComplete.innerText === 'Y' ? 'N' : 'Y';
+
+  const obj = { todoNo: todoNo, complete: complete };
+
+  fetch('/ajax/changeComplete', {
+    method: 'PUT',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify(obj),
+  })
+    .then((resp) => resp.text())
+    .then((result) => {
+      if (result > 0) {
+        tbody.innerText = '';
+        popupComplete.innerText = complete;
+
+        const count = Number(completeCount.innerText);
+        if (complete === 'Y') completeCount.innerText = count + 1;
+        else completeCount.innerText = count - 1;
+        selectTodoList();
+      } else {
+        alert('실패!');
+      }
+    });
+});
+
+updateBtn.addEventListener('click', () => {
+  popupLayer.classList.add('popup-hidden');
+  updateLayer.classList.remove('popup-hidden');
+
+  updateTitle.value = popupTodoTitle.innerText;
+  updateContent.value = popupTodoContent.innerHTML.replaceAll('<br>', '\n');
 });
 
 // 비동기로 할일 목록 조회하는 함수
