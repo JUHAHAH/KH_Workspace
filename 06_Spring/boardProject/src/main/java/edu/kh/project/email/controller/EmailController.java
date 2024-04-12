@@ -1,5 +1,7 @@
 package edu.kh.project.email.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,8 +44,18 @@ public class EmailController {
 	public int signup(@RequestBody String email) {
 		String authKey = service.sendEmail("signup", email);
 
+		if (authKey != null) {
+			return 1;
+		}
+
 		return 0;
 
+	}
+
+	@ResponseBody
+	@PostMapping("checkAuthKey")
+	public int checkAuthKey(@RequestBody Map<String, Object> map) {
+		return service.checkAuthKey(map);
 	}
 
 }

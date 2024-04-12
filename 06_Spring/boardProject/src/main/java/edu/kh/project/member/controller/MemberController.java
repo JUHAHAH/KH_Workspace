@@ -92,4 +92,45 @@ public class MemberController {
 
 		return service.checkEmail(memberEmail);
 	}
+
+	@ResponseBody
+	@GetMapping("checkNickname")
+	public int checkNickname(@RequestParam("memberNickname") String memberNickname) {
+
+		return service.checkNickname(memberNickname);
+
+	}
+
+	/**
+	 * inputMember : 입력된 회원 정보(memberEmail, memberPw, memberNickname, memberTel,
+	 * (memberAddress[]))
+	 * 
+	 * @param inputMember
+	 * @param memberAddress : 입력한 주소 3개의 값 전달
+	 * @param ra            : redirect시 request scope로 데이터 전달
+	 * @return
+	 */
+	@PostMapping("signup")
+	public String signup(Member inputMember, @RequestParam("memberAddress") String[] memberAddress,
+			RedirectAttributes ra) {
+
+		int result = service.signup(inputMember, memberAddress);
+
+		String path = null;
+		String message = null;
+
+		if (result > 0) {
+			message = inputMember.getMemberNickname() + "님의 가입을 환영합니다";
+			path = "/";
+
+		} else { // 실패
+			message = "회원가입 실패";
+			path = "/signup";
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:" + path;
+
+	}
 }

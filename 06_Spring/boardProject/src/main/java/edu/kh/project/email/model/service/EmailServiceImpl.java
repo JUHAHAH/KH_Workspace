@@ -1,9 +1,15 @@
 package edu.kh.project.email.model.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.thymeleaf.context.Context;
+import org.thymeleaf.spring6.SpringTemplateEngine;
 
 import edu.kh.project.email.model.mapper.EmailMapper;
 import jakarta.mail.internet.MimeMessage;
@@ -13,6 +19,9 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
+
+	// 타임리프 탬플릿 엔진(html -> java)
+	private final SpringTemplateEngine templateEngine;
 
 	private final EmailMapper mapper;
 
@@ -43,7 +52,9 @@ public class EmailServiceImpl implements EmailService {
 			helper.setTo(email); // 받는 사람 이메일 지정
 			helper.setSubject(subject); // 이메일 제목 지정
 
-			helper.setText(authKey); // 변경 -> html 보낼거다
+			helper.setText(loadHtml(authKey, htmlName), true); // 변경 -> html 보낼거다
+
+			helper.addInline("logo", new ClassPathResource("static/images/logo.jpg"));
 
 			mailSender.send(mimeMessage);
 
@@ -51,7 +62,32 @@ public class EmailServiceImpl implements EmailService {
 			e.printStackTrace();
 			return null;
 		}
-		return null;
+		Map<String, String> map = new HashMap<>();
+		map.put("authKey", authKey);
+		map.put("email", email);
+
+		// 해당하는 이메일이 DB에 존재할 수 있기 때문에 주의
+		// DB에 존재하는 경우 update 성공할것, 아니면 insert 시도(새로 생성)
+		int result = mapper.updateAuthKey(map);
+
+		if (result == 0) {
+			mapper.insertAuthKey(map);
+		}
+		// 뭔가 다 안되는 경우
+		if (result == 0)
+			return null;
+
+		return authKey;
+	}
+
+	private String loadHtml(String authKey, String htmlName) {
+		// 타임리프 값 세팅용 객체
+		Context context = new Context();
+
+		context.setVariable("authKey", authKey);
+
+		// template/email 폴더에서 htmlName과 같은 .html 파일 내용을 일ㄷ어와 String으로 변환
+		return templateEngine.process("email/" + htmlName, context); // HTML to Java 객체
 	}
 
 	/**
@@ -85,6 +121,12 @@ public class EmailServiceImpl implements EmailService {
 
 		}
 		return key;
+	}
+
+	@Override
+	public int checkAuthKey(Map<String, Object> map) {
+
+		return mapper.checkAuthKey(map);
 	}
 
 }

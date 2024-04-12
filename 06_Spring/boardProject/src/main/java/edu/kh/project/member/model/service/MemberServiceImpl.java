@@ -50,4 +50,35 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.checkEmail(memberEmail);
 	}
 
+	@Override
+	public int checkNickname(String memberNickname) {
+		return mapper.checkNickname(memberNickname);
+	}
+
+	@Override
+	public int signup(Member inputMember, String[] memberAddress) {
+
+		// 주소를 입력하지 않았다면 inputMember.getMemberAddress() -> ",," 이렇게 넘어옴
+		// memberAddress -> [,,]
+
+		// 주소가 입력된 경우
+		if (!inputMember.getMemberAddress().equals(",,")) {
+			// String.join("구분자", 배열)
+			// 배열의 모든 요소 사이에 "구분자"를 추가하여
+			// 하나의 문자열로 반환
+			String address = String.join("^^^", memberAddress); // 입력 주소에 , 있을 가능성 있다!
+			inputMember.setMemberAddress(address);
+		} else { // 주소입력 안된 경우
+			inputMember.setMemberAddress(null);
+		}
+
+		// 암호 암호화
+		String encPw = bcrypt.encode(inputMember.getMemberPw());
+
+		inputMember.setMemberPw(encPw);
+
+		// 회원 가입 매퍼 메서드 호출
+		return mapper.signup(inputMember);
+	}
+
 }
