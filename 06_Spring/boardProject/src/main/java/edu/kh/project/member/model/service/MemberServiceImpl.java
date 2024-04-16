@@ -1,5 +1,9 @@
 package edu.kh.project.member.model.service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,6 +27,13 @@ public class MemberServiceImpl implements MemberService {
 	private BCryptPasswordEncoder bcrypt;
 
 	@Override
+	public Member fastLogin(Member inputMember) {
+		Member loginMember = mapper.login(inputMember.getMemberEmail());
+		loginMember.setMemberPw(null);
+		return loginMember;
+	}
+
+	@Override
 	public Member login(Member inputMember) {
 
 //		String bcryptPassword = bcrypt.encode(inputMember.getMemberPw());
@@ -32,17 +43,18 @@ public class MemberServiceImpl implements MemberService {
 
 		Member loginMember = mapper.login(inputMember.getMemberEmail());
 
-		if (loginMember == null)
-			return null;
-
-		if (bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
+		if (loginMember == null) {
 			return null;
 		}
 
-		loginMember.setMemberPw(null);
+		if (bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
 
-		return loginMember;
+			loginMember.setMemberPw(null);
 
+			return loginMember;
+		}
+
+		return null;
 	}
 
 	@Override
@@ -79,6 +91,27 @@ public class MemberServiceImpl implements MemberService {
 
 		// 회원 가입 매퍼 메서드 호출
 		return mapper.signup(inputMember);
+	}
+
+	@Override
+	public List<String> getMemberList() {
+		return mapper.getMemberList();
+	}
+
+	@Override
+	public int resetPw(int inputNo) {
+		String encPw = bcrypt.encode("pass01!");
+
+		Map<String, Object> map = new HashMap<>();
+		map.put("inputNo", inputNo);
+		map.put("encPw", encPw);
+
+		return mapper.resetPw(map);
+	}
+
+	@Override
+	public int restorationMember(int inputNo) {
+		return mapper.restorationMember(inputNo);
 	}
 
 }

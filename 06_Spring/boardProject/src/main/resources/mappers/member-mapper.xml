@@ -39,6 +39,23 @@
 		DEFAULT
 		)
 	</insert>
+	
+	<select id="getMemberList" resultType="Member">
+		SELECT * FROM "MEMBER"
+	</select>
+	
+	<update id="resetPw">
+		UPDATE "MEMBER" SET
+		MEMBER_PW = #{encPw}
+		WHERE MEMBER_NO = #{inputNo}
+	</update>
+	
+	<update id="restorationMember">
+		UPDATE "MEMBER" SET
+		MEMBER_DEL_FL = 'Y'
+		WHERE MEMBER_NO = #{inputNo}
+		AND MEMBER_DEL_FL = 'N'
+	</update>
 
 
 </mapper>

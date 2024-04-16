@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,6 +27,17 @@ import lombok.extern.slf4j.Slf4j;
 public class MemberController {
 	@Autowired
 	private MemberService service;
+
+	@PostMapping("fastLogin")
+	public String fastLogin(Member inputMember, Model model) {
+
+		Member loginMember = service.fastLogin(inputMember);
+
+		if (loginMember != null) {
+			model.addAttribute("loginMember", loginMember);
+		}
+		return "redirect:/";
+	}
 
 	/**
 	 * 로그인
@@ -133,4 +146,19 @@ public class MemberController {
 		return "redirect:" + path;
 
 	}
+
+	@ResponseBody
+	@PutMapping("resetPw")
+	public int resetPw(@RequestBody int inputNo, RedirectAttributes ra) {
+		int result = service.resetPw(inputNo);
+		return result;
+	}
+
+	@ResponseBody
+	@PutMapping("restorationMember")
+	public int restorationMember(@RequestBody int inputNo, RedirectAttributes ra) {
+		int result = service.restorationMember(inputNo);
+		return result;
+	}
+
 }

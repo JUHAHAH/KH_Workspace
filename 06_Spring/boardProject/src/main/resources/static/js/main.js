@@ -55,3 +55,46 @@ if (loginForm != null) {
     }
   });
 }
+
+const resetMemberNo = document.querySelector('#resetMemberNo');
+const resetPw = document.querySelector('#resetPw');
+const restorationMemberNo = document.querySelector('#restorationMemberNo');
+const restorationBtn = document.querySelector('#restorationBtn');
+
+resetPw.addEventListener('click', () => {
+  const inputNo = resetMemberNo.value;
+
+  if (inputNo.trim().length == 0) {
+    alert('회원 번호를 입력해주세요');
+    return;
+  }
+
+  fetch('/member/resetPw', {
+    method: 'put',
+    headers: { 'Content-Type': 'application/json' },
+    body: inputNo,
+  })
+    .then((resp) => resp.text())
+    .then((result) => {
+      console.log(result);
+    });
+});
+
+restorationBtn.addEventListener('click', () => {
+  const inputNo = resetMemberNo.value;
+
+  if (inputNo.trim().length == 0) {
+    alert('회원 번호를 입력해주세요');
+    return;
+  }
+
+  fetch('/member/restorationMember', {
+    method: 'put',
+    headers: { 'Content-Type': 'application/json' },
+    body: inputNo,
+  })
+    .then((resp) => resp.text())
+    .then((result) => {
+      console.log(result);
+    });
+});
