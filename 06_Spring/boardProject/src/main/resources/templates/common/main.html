@@ -98,12 +98,14 @@
           <!-- 로그인 되어 있는 경우 -->
           <th:block th:unless="${session.loginMember == null}">
             <article class="login-area">
-              <!-- <a href="/myPage/profile">
-                <img th:with="user=#{user.default.image}"
-                th:src="${session.loginMember.profileImg ?: user}"
-                id="memberProfile"
-                alt="userProfile">
-              </a> -->
+              <a href="/myPage/profile">
+                <img
+                  th:with="user=#{user.default.image}"
+                  th:src="${session.loginMember.profileImg ?: user}"
+                  id="memberProfile"
+                  alt="userProfile"
+                />
+              </a>
 
               <div class="my-info" th:object="${session.loginMember}">
                 <div>
