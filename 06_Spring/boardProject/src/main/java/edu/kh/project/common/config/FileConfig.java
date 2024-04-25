@@ -43,6 +43,20 @@ public class FileConfig implements WebMvcConfigurer {
 	@Value("${my.profile.resource-location}")
 	private String profileResourceLocation;
 
+	// --------------------------------------------------------------
+	// 게시판 이미지
+	@Value("${my.board.resource-handler}")
+	private String boardResourceHandler;
+
+	@Value("${my.board.resource-location}")
+	private String boardResourceLocation;
+
+	@Value("${my.board.web-path}")
+	private String boardWebPath;
+
+	@Value("${my.board.folder-path}")
+	private String boardFolderPath;
+
 	// 요청 주소에 따라서 어떤 경로에 접근할 지 설정
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -55,6 +69,7 @@ public class FileConfig implements WebMvcConfigurer {
 
 		// file:// 은 URL 스킴(Scheme), 파일 시스템의 리소스
 		// C: 는 Windows 시스템에서의 C 드라이브
+		registry.addResourceHandler(boardResourceHandler).addResourceLocations(boardResourceLocation);
 
 	}
 

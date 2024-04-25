@@ -59,4 +59,50 @@ public class BoardServiceImpl implements BoardService {
 
 		return map;
 	}
+
+	@Override
+	public Board selectOne(Map<String, Integer> map) {
+		// 1. 하나의 Service메서드에서 여러 Mapper를 호출하는 방법
+
+		// 2. 사용하고자하는 SQL이 모두 SELECT이면서 조회된 일부를 이용하여 다음 SQL의 조건으로 삼을 수 있을 때
+		// <resultMap>, <collection> 채그를 이용하여 Mapper 1회 호출로 여러 SELECT 가능
+
+		return mapper.selectOne(map);
+
+	}
+
+	@Override
+	public int boardLike(Map<String, Integer> map) {
+		int result = 0;
+		// 1. 좋아요가 체크된 상태인 경우 (likeCheck == 1)
+		// -> BOARD_LIKE 테이블에 DELETE
+		if (map.get("likeCheck") == 1) {
+			result = mapper.deleteBoardLike(map);
+		} else {
+			// 2. 좋아요가 해제된 상태인 경우 (likeCheck == 0)
+			// -> BOARD_LIKE 테이블에 INSERT
+			result = mapper.insertBoardLike(map);
+		}
+
+		// 3. 다시 해당 게시글의 좋아요 개수 조회해서 반환
+		if (result > 0) {
+			return mapper.selectLikeCount(map.get("boardNo"));
+		}
+
+		return -1;
+	}
+
+	@Override
+	public int updateReadCount(int boardNo) {
+
+		// 1. 조회 수 1 증가
+		int result = mapper.updateReadCount(boardNo);
+
+		// 2. 현재 조회 수 조회
+		if (result > 0) {
+			return mapper.selectReadCount(boardNo);
+		}
+
+		return -1;
+	}
 }

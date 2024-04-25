@@ -3,6 +3,8 @@ package edu.kh.project.board.model.service;
 import java.util.List;
 import java.util.Map;
 
+import edu.kh.project.board.model.dto.Board;
+
 public interface BoardService {
 
 	/**
@@ -20,5 +22,11 @@ public interface BoardService {
 	 * @return map
 	 */
 	Map<String, Object> selectBoardList(int boardCode, int cp);
+
+	Board selectOne(Map<String, Integer> map);
+
+	int boardLike(Map<String, Integer> map);
+
+	int updateReadCount(int boardNo);
 
 }
