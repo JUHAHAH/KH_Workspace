@@ -40,6 +40,8 @@ public class BoardController {
 	/*
 	 * @param boardCode : 게시판 종류 구분 번호
 	 * 
+	 * @param paramMap : 제출된 파라미터 모두 저장 Map
+	 * 
 	 * @param cp : 현재 조회를 요청한 페이지 번호, 없으면 1
 	 * 
 	 * @return
@@ -49,13 +51,28 @@ public class BoardController {
 	 */
 	@GetMapping("{boardCode:[0-9]+}")
 	public String selectBoardList(@PathVariable("boardCode") int boardCode,
-			@RequestParam(value = "cp", required = false, defaultValue = "1") int cp, Model model) {
+			@RequestParam(value = "cp", required = false, defaultValue = "1") int cp, Model model,
+			@RequestParam Map<String, Object> paramMap) {
 
 //		log.debug("boardCode: " + boardCode);
 
 		// 조횟 서비스 호출 후 결과 반환
 		// pagination, boardList 실어올 예정
-		Map<String, Object> map = service.selectBoardList(boardCode, cp);
+//		Map<String, Object> map = service.selectBoardList(boardCode, cp);
+
+		Map<String, Object> map = null;
+
+		if (paramMap.get("key") == null) {
+			map = service.selectBoardList(boardCode, cp);
+
+		} else {
+			// boardCode를 추가
+			paramMap.put("boardCode", boardCode);
+
+			// 검색 서비스 호출 시
+			map = service.searchList(paramMap, cp);
+
+		}
 
 		model.addAttribute("pagination", map.get("pagination"));
 		model.addAttribute("boardList", map.get("boardList"));

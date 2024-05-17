@@ -1,0 +1,8 @@
+# Go for a run
+
+Start Date: 2023년 4월 16일
+Tags: Run
+오답노트 작성하기: No
+상태 1: 시작 전
+오늘 배운 내용 복습: No
+상태 2: 시작 전

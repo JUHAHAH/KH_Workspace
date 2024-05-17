@@ -152,7 +152,6 @@ sendAuthKeyBtn.addEventListener('click', () => {
 
   // 메일은 비동기로 서버에서 보내라고 하고
   // 화면에서는 타이머 시작하기
-
   authKeyMessage.innerText = initTime;
   authKeyMessage.classList.remove('confirm', 'error');
 
@@ -247,7 +246,7 @@ const checkPw = () => {
     checkObj.memberPwConfirm = true;
     return;
   }
-  pwMessage.innerText = '비밀버ㄴ호가 일치하지 않습니다';
+  pwMessage.innerText = '비밀번호가 일치하지 않습니다';
   pwMessage.classList.add('error');
   pwMessage.classList.remove('confirm');
   checkObj.memberPwConfirm = false;

@@ -1,5 +1,6 @@
 package edu.kh.project.board.model.service;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -28,5 +29,9 @@ public interface BoardService {
 	int boardLike(Map<String, Integer> map);
 
 	int updateReadCount(int boardNo);
+
+	Map<String, Object> searchList(Map<String, Object> paramMap, int cp);
+
+	List<File> selectDbImageList(List<File> serverImageList);
 
 }
